@@ -1,0 +1,12 @@
+# Visual Studio cache directory.
+.vs/
+
+# Visual Studio local project settings.
+*.vcxproj.user
+
+# Build intermediate files.
+/TIBERIANDAWN/Win32/
+/REDALERT/Win32/
+
+# Build results.
+/bin/
