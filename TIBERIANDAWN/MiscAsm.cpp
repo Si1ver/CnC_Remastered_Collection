@@ -1,27 +1,27 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 
 /*
-** 
+**
 **   Misc. assembly code moved from headers
-** 
-** 
-** 
-** 
-** 
+**
+**
+**
+**
+**
 */
 
 #include "FUNCTION.H"
@@ -31,7 +31,7 @@
 extern "C" void __cdecl Mem_Copy(void const *source, void *dest, unsigned long bytes_to_copy)
 {
 	memcpy(dest, source, bytes_to_copy);
-}			  
+}
 
 
 /***********************************************************************************************
@@ -56,25 +56,25 @@ int Distance_Coord(COORDINATE coord1, COORDINATE coord2)
 	__asm {
 		mov	eax,[coord1]
 		mov	ebx,[coord2]
-		mov	dx,ax			
-		sub	dx,bx			
-		jg	okx				
-		neg	dx				
-		okx:					
-		shr	eax,16			
-		shr	ebx,16			
-		sub	ax,bx			
-		jg	oky				
-		neg	ax				
-oky:					
-		cmp	ax,dx			
-		jg	ok				
-		xchg	ax,dx			
-ok:						
-		shr	dx,1				
+		mov	dx,ax
+		sub	dx,bx
+		jg	okx
+		neg	dx
+		okx:
+		shr	eax,16
+		shr	ebx,16
+		sub	ax,bx
+		jg	oky
+		neg	ax
+oky:
+		cmp	ax,dx
+		jg	ok
+		xchg	ax,dx
+ok:
+		shr	dx,1
 		add	ax,dx
 	}
-}			  
+}
 
 
 
@@ -110,8 +110,8 @@ long __cdecl Desired_Facing16(long x1, long y1, long x2, long y2)
 		11,10,12,-1, 9,10,8,-1
 	};
 
-	
-	__asm {		  
+
+	__asm {
 		xor	ebx,ebx			//; Index byte (built).
 
 		//; Determine Y axis difference.
@@ -203,7 +203,7 @@ dxisbig:
 
 int __cdecl Desired_Facing256(LONG srcx, LONG srcy, LONG dstx, LONG dsty)
 {
-	
+
 	__asm {
 			xor	ebx,ebx			//; Facing number.
 
@@ -287,7 +287,7 @@ noneg:
 			and	eax,0FFH
 //			ret
 	}
-}		 
+}
 
 
 
@@ -370,11 +370,11 @@ GLOBAL	 C Desired_Facing8	:NEAR
 */
 int __cdecl Desired_Facing8(long x1, long y1, long x2, long y2)
 {
-	
+
 	static const char _new_facing8[] = {1,2,1,0,7,6,7,0,3,2,3,4,5,6,5,4};
-	
+
 	__asm {
-		
+
 		xor	ebx,ebx			//; Index byte (built).
 
 		//; Determine Y axis difference.
@@ -420,7 +420,7 @@ dxisbig:
 //		ret
 
 	}
-	
+
 }
 
 
@@ -495,7 +495,7 @@ NewFacing16	DB	 3, 2, 4,-1, 1, 2,0,-1
 */
 long __cdecl Desired_Facing16(long x1, long y1, long x2, long y2)
 {
-	
+
 	__asm {
 			xor	ebx,ebx			; Index byte (built).
 
@@ -548,10 +548,10 @@ dxisbig:
 //			ret
 	}
 }
-		
-	
-			  
-	
+
+
+
+
 #if (0)
 	PROC	Desired_Facing16 C near
 	USES	ebx, ecx, edx
@@ -661,7 +661,7 @@ dxisbig:
 unsigned int __cdecl Cardinal_To_Fixed(unsigned base, unsigned cardinal)
 {
 	__asm {
-		
+
 				mov	eax,0FFFFh		//; establish default return value
 
 				mov	ebx,[base]
@@ -676,8 +676,8 @@ unsigned int __cdecl Cardinal_To_Fixed(unsigned base, unsigned cardinal)
 retneg1:
 				//ret
 
-		  
-	}	
+
+	}
 }
 
 #if (0)
@@ -741,7 +741,7 @@ unsigned int __cdecl Fixed_To_Cardinal(unsigned base, unsigned fixed)
 		jmp	all_done
 rneg1:
 		mov	eax,0FFFFh		//; establish default return value
-all_done:		
+all_done:
 		//ret
 	}
 
@@ -787,13 +787,13 @@ void __cdecl Set_Bit(void * array, int bit, int value)
 		mov	ecx, [bit]
 		mov	eax, [value]
 		mov	esi, [array]
-		mov	ebx,ecx					
-		shr	ebx,5					
-		and	ecx,01Fh				
-		btr	[esi+ebx*4],ecx		
-		or	eax,eax					
-		jz	ok						
-		bts	[esi+ebx*4],ecx		
+		mov	ebx,ecx
+		shr	ebx,5
+		and	ecx,01Fh
+		btr	[esi+ebx*4],ecx
+		or	eax,eax
+		jz	ok
+		bts	[esi+ebx*4],ecx
 ok:
 	}
 }
@@ -804,10 +804,10 @@ int __cdecl Get_Bit(void const * array, int bit)
 	__asm {
 		mov	eax, [bit]
 		mov	esi, [array]
-		mov	ebx,eax					
-		shr	ebx,5					
-		and	eax,01Fh				
-		bt	[esi+ebx*4],eax		
+		mov	ebx,eax
+		shr	ebx,5
+		and	eax,01Fh
+		bt	[esi+ebx*4],eax
 		setc	al
 	}
 }
@@ -816,13 +816,13 @@ int __cdecl First_True_Bit(void const * array)
 {
 	__asm {
 		mov	esi, [array]
-		mov	eax,-32					
-again:							
-		add	eax,32					
-		mov	ebx,[esi]				
-		add	esi,4					
-		bsf	ebx,ebx					
-		jz	again					
+		mov	eax,-32
+again:
+		add	eax,32
+		mov	ebx,[esi]
+		add	esi,4
+		bsf	ebx,ebx
+		jz	again
 		add	eax,ebx
 	}
 }
@@ -831,35 +831,35 @@ again:
 int __cdecl First_False_Bit(void const * array)
 {
 	__asm {
-		
+
 		mov	esi, [array]
-		mov	eax,-32					
-again:							
-		add	eax,32					
-		mov	ebx,[esi]				
-		not	ebx						
-		add	esi,4					
-		bsf	ebx,ebx					
-		jz	again					
+		mov	eax,-32
+again:
+		add	eax,32
+		mov	ebx,[esi]
+		not	ebx
+		add	esi,4
+		bsf	ebx,ebx
+		jz	again
 		add	eax,ebx
 	}
 }
 
 int __cdecl Bound(int original, int min, int max)
-{		
+{
 	__asm {
 		mov	eax,[original]
 		mov	ebx,[min]
 		mov	ecx,[max]
-		cmp	ebx,ecx					
-		jl	okorder					
-		xchg	ebx,ecx					
-okorder: cmp	eax,ebx		
-		jg	okmin					
-		mov	eax,ebx					
-okmin: cmp	eax,ecx			
-		jl	okmax					
-		mov	eax,ecx					
+		cmp	ebx,ecx
+		jl	okorder
+		xchg	ebx,ecx
+okorder: cmp	eax,ebx
+		jg	okmin
+		mov	eax,ebx
+okmin: cmp	eax,ecx
+		jl	okmax
+		mov	eax,ecx
 okmax:
 	}
 }
@@ -904,10 +904,10 @@ CELL __cdecl Coord_Cell(COORDINATE coord)
 ; Bounds Checking: None
 ;
 ;*
-*/ 
+*/
 void __cdecl Shake_Screen(int shakes)
 {
-	// PG_TO_FIX	
+	// PG_TO_FIX
 	// Need a different solution for shaking the screen
 	shakes;
 }
@@ -1076,7 +1076,7 @@ GLOBAL	C Shake_Screen	:NEAR
 ;*=========================================================================*/
 
 void * __cdecl Conquer_Build_Fading_Table(void const *palette, void *dest, int color, int frac)
-{	
+{
 	/*
 	global C	Conquer_Build_Fading_Table : NEAR
 	PROC	Conquer_Build_Fading_Table C near
@@ -1095,7 +1095,7 @@ void * __cdecl Conquer_Build_Fading_Table(void const *palette, void *dest, int c
 	LOCAL	idealgreen:BYTE
 	LOCAL	idealblue:BYTE
 	LOCAL	matchcolor:BYTE		; Tentative match color.
-	
+
 ALLOWED_COUNT	EQU	16
 ALLOWED_START	EQU	256-ALLOWED_COUNT
 	*/
@@ -1107,13 +1107,13 @@ ALLOWED_START	EQU	256-ALLOWED_COUNT
 	unsigned char targetred = 0;		//BYTE		; Target gun red.
 	unsigned char targetgreen = 0;	//BYTE		; Target gun green.
 	unsigned char targetblue = 0;		//BYTE		; Target gun blue.
-	unsigned char idealred = 0;		//BYTE	
-	unsigned char idealgreen = 0;		//BYTE	
-	unsigned char idealblue = 0;		//BYTE	
+	unsigned char idealred = 0;		//BYTE
+	unsigned char idealgreen = 0;		//BYTE
+	unsigned char idealblue = 0;		//BYTE
 	unsigned char matchcolor = 0;		//:BYTE		; Tentative match color.
 
 	__asm {
-	
+
 			cld
 
 			; If the source palette is NULL, then just return with current fading table pointer.
@@ -1255,7 +1255,7 @@ ALLOWED_START	EQU	256-ALLOWED_COUNT
 		fini1:
 			mov	esi,[dest]
 			mov	eax,esi
-			
+
 			//ret
 	}
 }
@@ -1282,7 +1282,7 @@ extern "C" short __cdecl Reverse_Short(short number)
 		mov	ax,[number]
 		xchg	ah,al
 	}
-}	
+}
 
 
 
@@ -1330,7 +1330,7 @@ extern "C" long __cdecl Swap_Long(long number)
 */
 void __cdecl strtrim(char *buffer)
 {
-	__asm {		  
+	__asm {
 			cmp	[buffer],0
 			je	short fini
 
@@ -1410,7 +1410,7 @@ void __cdecl strtrim(char *buffer)
 void __cdecl Fat_Put_Pixel(int x, int y, int color, int siz, GraphicViewPortClass &gpage)
 {
 	__asm {
-				  
+
 			cmp	[siz],0
 			je	short exit_label
 
@@ -1432,7 +1432,7 @@ void __cdecl Fat_Put_Pixel(int x, int y, int color, int siz, GraphicViewPortClas
 			add	edi,eax
 
 			; Verify the the X pixel offset is legal.
-	
+
 			mov	edx,[ebx]GraphicViewPortClass.Width
 			cmp	edx,[x]
 			mov	edx,ecx
@@ -1510,7 +1510,7 @@ extern "C" long __cdecl Calculate_CRC(void *buffer, long length)
 			xor	ebx,ebx
 
 			//; Fetch the length of the data block to CRC.
-			
+
 			mov	ecx,[local_length]
 
 			jecxz	short fini

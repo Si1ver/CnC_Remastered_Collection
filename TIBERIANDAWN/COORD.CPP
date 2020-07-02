@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\coord.cpv   2.18   16 Oct 1995 16:51:24   JOE_BOSTIC  $ */
@@ -403,9 +403,9 @@ COORDINATE Coord_Scatter(COORDINATE coord, unsigned distance, bool lock)
 int __cdecl calcx(signed short param1, short distance)
 {
 	__asm {
-				  
+
 //#pragma aux calcx parm [ax] [bx] \
-	
+
 		movzx	eax, [param1]
 		mov	bx, [distance]
 		imul 	bx
@@ -421,9 +421,9 @@ int __cdecl calcx(signed short param1, short distance)
 int __cdecl calcy(signed short param1, short distance)
 {
 	__asm {
-				  
+
 //#pragma aux calcy parm [ax] [bx] \
-	
+
 		movzx	eax, [param1]
 		mov	bx, [distance]
 		imul bx
@@ -463,7 +463,7 @@ extern int calcy(signed short, short distance);
 	"mov	ah,dl"					\
 	"cwd"								\
 	"neg	eax";
-//	"and	eax,0FFFFh"				
+//	"and	eax,0FFFFh"
 #endif
 
 

@@ -1,35 +1,35 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\heap.h_v   2.15   16 Oct 1995 16:47:08   JOE_BOSTIC  $ */
-/*********************************************************************************************** 
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
- *********************************************************************************************** 
- *                                                                                             * 
- *                 Project Name : Command & Conquer                                            * 
- *                                                                                             * 
- *                    File Name : HEAP.H                                                       * 
- *                                                                                             * 
- *                   Programmer : Joe L. Bostic                                                * 
- *                                                                                             * 
- *                   Start Date : 02/18/95                                                     * 
- *                                                                                             * 
- *                  Last Update : February 18, 1995 [JLB]                                      * 
- *                                                                                             * 
- *---------------------------------------------------------------------------------------------* 
- * Functions:                                                                                  * 
+/***********************************************************************************************
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
+ ***********************************************************************************************
+ *                                                                                             *
+ *                 Project Name : Command & Conquer                                            *
+ *                                                                                             *
+ *                    File Name : HEAP.H                                                       *
+ *                                                                                             *
+ *                   Programmer : Joe L. Bostic                                                *
+ *                                                                                             *
+ *                   Start Date : 02/18/95                                                     *
+ *                                                                                             *
+ *                  Last Update : February 18, 1995 [JLB]                                      *
+ *                                                                                             *
+ *---------------------------------------------------------------------------------------------*
+ * Functions:                                                                                  *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #ifndef HEAP_H
@@ -128,7 +128,7 @@ class TFixedHeapClass : public FixedHeapClass
 
 
 /**************************************************************************
-**	This is a derivative of the fixed heap class. This class adds the 
+**	This is a derivative of the fixed heap class. This class adds the
 **	ability to quickly iterate through the active (allocated) objects. Since the
 **	active array is a sequence of pointers, the overhead of this class
 **	is 4 bytes per potential allocated object (be warned).
@@ -183,16 +183,16 @@ class TFixedIHeapClass : public FixedIHeapClass
 };
 
 
-/*********************************************************************************************** 
+/***********************************************************************************************
  * TFixedIHeapClass::Save -- Saves all active objects                                          *
- *                                                                                             * 
+ *                                                                                             *
  * INPUT:   file      file to write to                                                         *
- *                                                                                             * 
+ *                                                                                             *
  * OUTPUT:  true = OK, false = error                                                           *
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
  *   03/15/1995 BRR : Created.                                                                 *
  *=============================================================================================*/
 template<class T>
@@ -230,19 +230,19 @@ int TFixedIHeapClass<T>::Save(FileClass &file)
 	}
 
 	return(true);
-}	
+}
 
 
-/*********************************************************************************************** 
+/***********************************************************************************************
  * TFixedIHeapClass::Load -- Loads all active objects                                          *
- *                                                                                             * 
+ *                                                                                             *
  * INPUT:   file      file to read from                                                        *
- *                                                                                             * 
+ *                                                                                             *
  * OUTPUT:  true = OK, false = error                                                           *
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
  *   03/15/1995 BRR : Created.                                                                 *
  *=============================================================================================*/
 template<class T>
@@ -295,19 +295,19 @@ int TFixedIHeapClass<T>::Load(FileClass &file)
 	}
 
 	return(true);
-}	
+}
 
 
-/*********************************************************************************************** 
+/***********************************************************************************************
  * TFixedIHeapClass::Code_Pointers -- codes pointers for every object, to prepare for save     *
- *                                                                                             * 
+ *                                                                                             *
  * INPUT:   file      file to read from                                                        *
- *                                                                                             * 
+ *                                                                                             *
  * OUTPUT:  true = OK, false = error                                                           *
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
  *   03/15/1995 BRR : Created.                                                                 *
  *=============================================================================================*/
 template<class T>
@@ -321,16 +321,16 @@ void TFixedIHeapClass<T>::Code_Pointers(void)
 }
 
 
-/*********************************************************************************************** 
+/***********************************************************************************************
  * TFixedIHeapClass::Decode_Pointers -- Decodes all object pointers, for after loading         *
- *                                                                                             * 
+ *                                                                                             *
  * INPUT:   file      file to read from                                                        *
- *                                                                                             * 
+ *                                                                                             *
  * OUTPUT:  true = OK, false = error                                                           *
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
  *   03/15/1995 BRR : Created.                                                                 *
  *=============================================================================================*/
 template<class T>
@@ -346,4 +346,3 @@ void TFixedIHeapClass<T>::Decode_Pointers(void)
 
 #endif
 
-	

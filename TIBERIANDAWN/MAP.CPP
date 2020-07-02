@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\map.cpv   2.17   16 Oct 1995 16:52:22   JOE_BOSTIC  $ */
@@ -1190,9 +1190,9 @@ if (BlubCell->Overlapper[1]) {
 		.....................................................................*/
 		obj = (*this)[cell].Cell_Occupier();
 		if (obj) {
-			
+
 			volatile TARGET target = obj->As_Target();		// This will do some internal verification
-			
+
 			if (!obj->IsActive) {
 				return false;
 			}
@@ -1200,7 +1200,7 @@ if (BlubCell->Overlapper[1]) {
 			if (obj->IsInLimbo) {
 				return false;
 			}
-				
+
 			if (((unsigned int)Coord_Cell(obj->Coord) > 4095)) {
 				return (false);
 			}
@@ -1212,7 +1212,7 @@ if (BlubCell->Overlapper[1]) {
 		for (i = 0; i < 3; i++) {
 			obj = (*this)[cell].Overlapper[i];
 			if (obj) {
-				
+
 				volatile TARGET target = obj->As_Target();		// This will do some internal verification
 
 				if (!obj->IsActive) {
@@ -1222,7 +1222,7 @@ if (BlubCell->Overlapper[1]) {
 				if (obj->IsInLimbo) {
 					return false;
 				}
-				
+
 				if (((unsigned int)Coord_Cell(obj->Coord) > 4095)) {
 					return (false);
 				}
@@ -1255,7 +1255,7 @@ void MapClass::Clean(void)
 	CELL cell;
 	ObjectClass *obj;
 	int i;
-#ifndef NDEBUG	
+#ifndef NDEBUG
 	char debug_message[256];
 #endif
 	bool active_fail = false;
@@ -1281,7 +1281,7 @@ void MapClass::Clean(void)
 		for (i = 0; i < 3; i++) {
 			obj = (*this)[cell].Overlapper[i];
 			if (obj) {
-				
+
 				if (!obj->IsActive) {
 					(*this)[cell].Overlapper[i] = NULL;
 					active_fail = true;
@@ -1293,9 +1293,9 @@ void MapClass::Clean(void)
 				}
 
 				if (active_fail || limbo_fail) {
-#ifndef NDEBUG					
+#ifndef NDEBUG
 					/*
-					** This object is likely deleted. 
+					** This object is likely deleted.
 					*/
 					if (abstract_vtable == *(unsigned long*)obj) {
 						type_text = "Abstract";
@@ -1303,7 +1303,7 @@ void MapClass::Clean(void)
 					} else {
 
 						RTTIType type = obj->What_Am_I();
-	
+
 						switch (type) {
 							default:
 								type_text = "Unknown";
@@ -1312,15 +1312,15 @@ void MapClass::Clean(void)
 							case RTTI_INFANTRY:
 								type_text = "Infantry";
 								break;
-						
+
 							case RTTI_UNIT:
 								type_text = "Unit";
 								break;
-						
+
 							case RTTI_AIRCRAFT:
 								type_text = "Aircraft";
 								break;
-					
+
 							case RTTI_BUILDING:
 								type_text = "Building";
 								break;
@@ -1347,7 +1347,7 @@ void MapClass::Clean(void)
 
 					sprintf_s(debug_message, sizeof(debug_message) - 1, "Cleaned %s overlapper in cell %08X. Type=%s, IniName=%s", active_fail ? "inactive" : "limbo", cell, type_text, ini_name);
 					GlyphX_Debug_Print(debug_message);
-#endif //NDEBUG					
+#endif //NDEBUG
 				}
 			}
 		}

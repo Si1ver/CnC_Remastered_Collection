@@ -1,19 +1,19 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
-#define TXT_NONE                 	0  	// 
+#define TXT_NONE                 	0  	//
 #define TXT_CREDIT_FORMAT        	1  	// %3d.%02d
 #define TXT_BUTTON_UPGRADE       	2  	// Upgrade
 #define TXT_UPGRADE              	3  	// Upgrade Structure
@@ -294,7 +294,7 @@
 #define TXT_THATGUYS_GAME_BRACKET	278	// [%s's Game]
 #define TXT_NETGAME_SETUP        	279	// Network Game Setup
 #define TXT_REJECT               	280	// Reject
-#define TXT_CANT_REJECT_SELF     	281	// You can't reject yourself! 
+#define TXT_CANT_REJECT_SELF     	281	// You can't reject yourself!
 #define TXT_SELECT_PLAYER_REJECT 	282	// You must select a player to
 #define TXT_BASES_ON             	283	// Bases On
 #define TXT_BASES_OFF            	284	// Bases Off

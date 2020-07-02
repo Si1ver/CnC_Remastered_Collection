@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\mapedtm.cpv   2.18   16 Oct 1995 16:52:16   JOE_BOSTIC  $ */
@@ -36,7 +36,7 @@
  *   MapEditClass::Team_Members -- user picks makeup of a team             *
  *   MapEditClass::Build_Mission_list -- fills in mission list box         *
  *   MapEditClass::Draw_Member -- Draws a member of the team dialog box.   *
- *   MapEditClass::Team_Members -- Team members dialog                     * 
+ *   MapEditClass::Team_Members -- Team members dialog                     *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include "function.h"
@@ -1456,20 +1456,20 @@ enum {
 
 };
 
-/*************************************************************************** 
- * MapEditClass::Team_Members -- Team members dialog                       * 
- *                                                                         * 
- * INPUT:                                                                  * 
+/***************************************************************************
+ * MapEditClass::Team_Members -- Team members dialog                       *
+ *                                                                         *
+ * INPUT:                                                                  *
  *		house			house to show members for											*
- *                                                                         * 
- * OUTPUT:                                                                 * 
+ *                                                                         *
+ * OUTPUT:                                                                 *
  *		0 = OK, -1 = cancel																	*
- *                                                                         * 
- * WARNINGS:                                                               * 
+ *                                                                         *
+ * WARNINGS:                                                               *
  *		none.																						*
- *                                                                         * 
- * HISTORY:                                                                * 
- *   04/09/1996 BRR : Created.                                             * 
+ *                                                                         *
+ * HISTORY:                                                                *
+ *   04/09/1996 BRR : Created.                                             *
  *=========================================================================*/
 int MapEditClass::Team_Members(HousesType house)
 {
@@ -1633,10 +1633,10 @@ int MapEditClass::Team_Members(HousesType house)
 	numrows = (maxclasses + numcols - 1) / numcols;
 
 	//
-	//	Dialog's height = top margin + label + picture rows + 
+	//	Dialog's height = top margin + label + picture rows +
 	// margin + label + margin + btn
 	//
-	dlg_h = (D_MARGIN + D_TXT6_H + D_MARGIN + (numrows * D_ROW_H) + 
+	dlg_h = (D_MARGIN + D_TXT6_H + D_MARGIN + (numrows * D_ROW_H) +
 		D_MARGIN + D_TXT6_H + D_MARGIN + D_OK_H + D_MARGIN);
 	if (dlg_h > 400) {
 		dlg_h = 400;
@@ -1718,7 +1718,7 @@ int MapEditClass::Team_Members(HousesType house)
 					//
 					//	Display the object along with any count value for it.
 					//
-					Draw_Member(teamclass[i], i, teamcount[i], house, 
+					Draw_Member(teamclass[i], i, teamcount[i], house,
 						D_DIALOG_X + 16, dlg_picture_top);
 				}
 
@@ -1814,7 +1814,7 @@ int MapEditClass::Team_Members(HousesType house)
 					if ((unsigned)curclass < maxclasses) {
 						Fancy_Text_Print(teamclass[curclass]->Full_Name(),
 							D_DIALOG_X + D_DIALOG_W / 2, msg_y,
-							CC_GREEN, TBLACK, 
+							CC_GREEN, TBLACK,
 							TPF_CENTER|TPF_6PT_GRAD|TPF_USE_GRAD_PAL|TPF_NOSHADOW);
 					}
 
@@ -1865,7 +1865,7 @@ int MapEditClass::Team_Members(HousesType house)
 				/*
 				**	Update number label.
 				*/
-				Draw_Member(teamclass[curclass], curclass, teamcount[curclass], 
+				Draw_Member(teamclass[curclass], curclass, teamcount[curclass],
 					house, D_DIALOG_X + 16, dlg_picture_top);
 
 			}
@@ -1900,7 +1900,7 @@ int MapEditClass::Team_Members(HousesType house)
 					/*
 					**	Update number label.
 					*/
-					Draw_Member(teamclass[curclass], curclass, teamcount[curclass], 
+					Draw_Member(teamclass[curclass], curclass, teamcount[curclass],
 						house, D_DIALOG_X + 16, dlg_picture_top);
 
 				}
@@ -1961,7 +1961,7 @@ int MapEditClass::Team_Members(HousesType house)
  * HISTORY:                                                                                    *
  *   07/02/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
-void MapEditClass::Draw_Member(TechnoTypeClass const * ptr, int index, 
+void MapEditClass::Draw_Member(TechnoTypeClass const * ptr, int index,
 	int quant, HousesType house, int pic_x, int pic_y)
 {
 	int numcols = (D_DIALOG_W - 32) / D_PICTURE_W;
@@ -1982,8 +1982,8 @@ void MapEditClass::Draw_Member(TechnoTypeClass const * ptr, int index,
 	ptr->Display(x + D_PICTURE_W / 2, y + D_PICTURE_H / 2, WINDOW_EDITOR, house);
 
 	if (quant > 0) {
-		Fancy_Text_Print("%d", x + 1, y + D_PICTURE_H - 16, 
-			CC_GREEN, TBLACK, 
+		Fancy_Text_Print("%d", x + 1, y + D_PICTURE_H - 16,
+			CC_GREEN, TBLACK,
 			TPF_6PT_GRAD | TPF_USE_GRAD_PAL | TPF_DROPSHADOW, quant);
 	}
 

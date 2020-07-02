@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\drive.cpv   2.17   16 Oct 1995 16:51:16   JOE_BOSTIC  $ */
@@ -742,13 +742,13 @@ bool DriveClass::While_Moving(void)
 
 	/*
 	**  NEW 4/30/2019 7:59AM
-	** 
+	**
 	**  When we don't have enough speed accumulated to move another pixel, it would be good to know at a sub-pixel (lepton) level
 	**  how far we would move if we could. It didn't matter in the original when it was 320x200 pixels, but on a 3840x2160
 	**  screen, what was half a pixel could now be several pixels.
-	** 
+	**
 	**  ST
-	** 
+	**
 	*/
 	if (actual && actual <= PIXEL_LEPTON_W) {
 		TurnTrackType	const *track;	// Track control pointer.
@@ -794,7 +794,7 @@ bool DriveClass::While_Moving(void)
 	} else {
 		SimLeptonX = 0;
 		SimLeptonY = 0;
-	}	
+	}
 
 
 

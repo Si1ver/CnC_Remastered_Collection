@@ -1,16 +1,16 @@
 ﻿;
 ; Copyright 2020 Electronic Arts Inc.
 ;
-; TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-; software: you can redistribute it and/or modify it under the terms of 
-; the GNU General Public License as published by the Free Software Foundation, 
+; TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+; software: you can redistribute it and/or modify it under the terms of
+; the GNU General Public License as published by the Free Software Foundation,
 ; either version 3 of the License, or (at your option) any later version.
 
-; TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-; in the hope that it will be useful, but with permitted additional restrictions 
-; under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-; distributed with this program. You should have received a copy of the 
-; GNU General Public License along with permitted additional restrictions 
+; TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+; in the hope that it will be useful, but with permitted additional restrictions
+; under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+; distributed with this program. You should have received a copy of the
+; GNU General Public License along with permitted additional restrictions
 ; with this program. If not, see [https://github.com/electronicarts/CnC_Remastered_Collection]>.
 
 ;***************************************************************************
@@ -47,7 +47,7 @@
 
 OPTIMAL_BYTE_COPY	equ	14
 
-GraphicViewPort STRUCT 
+GraphicViewPort STRUCT
 GVPOffset		DD		?		; offset to virtual viewport
 GVPWidth			DD		?		; width of virtual viewport
 GVPHeight		DD		?		; height of virtual viewport
@@ -159,7 +159,7 @@ endm
 
 
 
-epilogue macro 
+epilogue macro
 endm
 
 
@@ -1135,7 +1135,7 @@ got_line_type:mov	[edi],bh
 		popad
 		ret
 
-Setup_Shape_Header	endp	
+Setup_Shape_Header	endp
 
 
 
@@ -1363,7 +1363,7 @@ not_shape_transparent:
 
 not_shape_ghost:
 
-	 
+
       	shl	eax,7
        	add	eax, offset NewShapeJumpTable
 	mov	[ShapeJumpTableAddress],eax
@@ -1653,7 +1653,7 @@ forward_loop_bytes:
 	add	edi , [ dest_adjust_width ]
 	dec	edx					; decrement the height
 	jnz	forward_loop_bytes
-	
+
 	epilogue
 
 	ret
@@ -4008,7 +4008,7 @@ predator_g_f_t_reference:
 Not_Supported:
 	ret
 
-Buffer_Frame_To_Page	ENDP	
+Buffer_Frame_To_Page	ENDP
 
 
 end

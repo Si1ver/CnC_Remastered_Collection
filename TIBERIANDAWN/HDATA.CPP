@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\hdata.cpv   2.17   16 Oct 1995 16:48:18   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -31,7 +31,7 @@
  *---------------------------------------------------------------------------------------------*
  * Functions:                                                                                  *
  *   HouseTypeClass::From_Name -- Fetch house pointer from its name.                           *
- *   HouseTypeClass::As_Reference -- Fetches a reference to the house specified.               * 
+ *   HouseTypeClass::As_Reference -- Fetches a reference to the house specified.               *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"function.h"
@@ -213,15 +213,15 @@ HouseTypeClass const * const HouseTypeClass::Pointers[HOUSE_COUNT] = {
  * HISTORY:                                                                                    *
  *   06/21/1994 JLB : Created.                                                                 *
  *=============================================================================================*/
-HouseTypeClass::HouseTypeClass(HousesType house, 
-				char const * ini, 
-				int fullname, 
-				char const * ext, 
-				int lemon, 
-				int color, 
-				int bright_color, 
+HouseTypeClass::HouseTypeClass(HousesType house,
+				char const * ini,
+				int fullname,
+				char const * ext,
+				int lemon,
+				int color,
+				int bright_color,
 				PlayerColorType remapcolor,
-				unsigned char const * remap, 
+				unsigned char const * remap,
 				char prefix)
 {
 	RemapTable = remap;
@@ -301,22 +301,22 @@ void HouseTypeClass::One_Time(void)
 }
 
 
-/*********************************************************************************************** 
- * HouseTypeClass::As_Reference -- Fetches a reference to the house specified.                 * 
- *                                                                                             * 
- *    Use this routine to fetch a reference to the house number specified.                     * 
- *                                                                                             * 
- * INPUT:   house -- The house number (HousesType) to look up.                                 * 
- *                                                                                             * 
- * OUTPUT:  Returns with a reference to the HouseTypeClass object that matches the house       * 
- *          number specified.                                                                  * 
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
- *   01/23/1995 JLB : Created.                                                                 * 
+/***********************************************************************************************
+ * HouseTypeClass::As_Reference -- Fetches a reference to the house specified.                 *
+ *                                                                                             *
+ *    Use this routine to fetch a reference to the house number specified.                     *
+ *                                                                                             *
+ * INPUT:   house -- The house number (HousesType) to look up.                                 *
+ *                                                                                             *
+ * OUTPUT:  Returns with a reference to the HouseTypeClass object that matches the house       *
+ *          number specified.                                                                  *
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   01/23/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
-HouseTypeClass const & HouseTypeClass::As_Reference(HousesType house) 
+HouseTypeClass const & HouseTypeClass::As_Reference(HousesType house)
 {
 	return(*Pointers[house]);
 }

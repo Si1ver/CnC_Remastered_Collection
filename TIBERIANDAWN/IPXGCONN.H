@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\ipxgconn.h_v   1.10   16 Oct 1995 16:47:30   JOE_BOSTIC  $ */
@@ -60,7 +60,7 @@
 This is the header for Global Connection messages.  It includes the usual
 "standard" header that the other connections do; but it also includes an
 IPX address field, so the application can get the address of the sender
-of this message.  This address field must be provided in by the IXP 
+of this message.  This address field must be provided in by the IXP
 Connection Manager class, when it calls this class's Receive_Packet function.
 ---------------------------------------------------------------------------*/
 typedef struct {
@@ -91,9 +91,9 @@ class IPXGlobalConnClass : public IPXConnClass
 			GLOBAL_MAGICNUM = 0x1234,
 			/*..................................................................
 			These are the values used for the ProductID field in the Global
-			Message structure.  It also should be the Magic Number used for the 
+			Message structure.  It also should be the Magic Number used for the
 			private connections within that product.
-			This list should be continually updated & kept current.  Never ever 
+			This list should be continually updated & kept current.  Never ever
 			ever use an old product ID for your product!
 			..................................................................*/
 			COMMAND_AND_CONQUER = 0xaa01,
@@ -102,14 +102,14 @@ class IPXGlobalConnClass : public IPXConnClass
 		/*.....................................................................
 		Constructor/destructor.
 		.....................................................................*/
-		IPXGlobalConnClass (int numsend, int numrecieve, int maxlen, 
+		IPXGlobalConnClass (int numsend, int numrecieve, int maxlen,
 			unsigned short product_id);
 		virtual ~IPXGlobalConnClass () {};
 
 		/*.....................................................................
 		Send/Receive routines.
 		.....................................................................*/
-		virtual int Send_Packet (void * buf, int buflen, 
+		virtual int Send_Packet (void * buf, int buflen,
 			IPXAddressClass *address, int ack_req);
 		virtual int Receive_Packet (void * buf, int buflen,
 			IPXAddressClass *address);

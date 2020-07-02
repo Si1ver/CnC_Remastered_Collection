@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\house.h_v   2.21   16 Oct 1995 16:46:14   JOE_BOSTIC  $ */
@@ -407,7 +407,7 @@ class HouseClass {
 		** Start location (waypoint index) passed in from GlyphX
 		*/
 		int StartLocationOverride;
-				
+
 		/*---------------------------------------------------------------------
 		**	Constructors, Destructors, and overloaded operators.
 		*/
@@ -463,7 +463,7 @@ class HouseClass {
 		void  Refund_Money(unsigned money);
 		void  Attacked(BuildingClass* source);
 #ifndef USE_RA_AI
-		void  Adjust_Power(int adjust) {Power += adjust;};  // Replaced by function from RA. ST - 7/17/2019 11:51AM		
+		void  Adjust_Power(int adjust) {Power += adjust;};  // Replaced by function from RA. ST - 7/17/2019 11:51AM
 		void  Adjust_Drain(int adjust) {Drain += adjust;};  // Replaced by function from RA. ST - 7/17/2019 11:51AM
 #endif
 		int  Adjust_Capacity(int adjust, bool inanger=false);
@@ -723,10 +723,10 @@ class HouseClass {
 #ifdef USE_RA_AI
 
 		/***************************************************************************************
-		** 
+		**
 		** AI data imported from RA. ST - 7/17/2019 11:35AM
-		** 
-		** 
+		**
+		**
 		*/
 
 	public:

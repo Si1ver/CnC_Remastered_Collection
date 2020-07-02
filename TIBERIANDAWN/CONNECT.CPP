@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\connect.cpv   1.9   16 Oct 1995 16:48:56   JOE_BOSTIC  $ */
@@ -33,7 +33,7 @@
  *   ConnectionClass::~ConnectionClass -- class destructor                 *
  *   ConnectionClass::Service -- main polling routine; services packets		*
  *   ConnectionClass::Time -- gets current time										*
- *   ConnectionClass::Command_Name -- returns name for a packet command		* 
+ *   ConnectionClass::Command_Name -- returns name for a packet command		*
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include "function.h"
@@ -81,7 +81,7 @@ char *ConnectionClass::Commands[PACKET_COUNT] = {
  * HISTORY:                                                                *
  *   12/20/1994 BR : Created.                                              *
  *=========================================================================*/
-ConnectionClass::ConnectionClass (int maxlen, unsigned short magicnum, 
+ConnectionClass::ConnectionClass (int maxlen, unsigned short magicnum,
 	unsigned long retry_delta, unsigned long max_retries, unsigned long timeout)
 {
 	/*------------------------------------------------------------------------
@@ -162,7 +162,7 @@ int ConnectionClass::Service (void)
 {
 	/*------------------------------------------------------------------------
 	Service the Send Queue.  This [re]sends packets in the Send Queue which
-	haven't been ACK'd yet, and if their retry timeout has expired, and 
+	haven't been ACK'd yet, and if their retry timeout has expired, and
 	updates the FirstTime, LastTime & SendCount values in the Queue entry.
 	Entries that have been ACK'd should be removed.
 	------------------------------------------------------------------------*/
@@ -222,20 +222,20 @@ unsigned long ConnectionClass::Time (void)
 }	/* end of Time */
 
 
-/*************************************************************************** 
- * ConnectionClass::Command_Name -- returns name for given packet command  * 
- *                                                                         * 
- * INPUT:                                                                  * 
+/***************************************************************************
+ * ConnectionClass::Command_Name -- returns name for given packet command  *
+ *                                                                         *
+ * INPUT:                                                                  *
  *		command		packet Command value to get name for							*
- *                                                                         * 
- * OUTPUT:                                                                 * 
+ *                                                                         *
+ * OUTPUT:                                                                 *
  *		ptr to command name, NULL if invalid											*
- *                                                                         * 
- * WARNINGS:                                                               * 
+ *                                                                         *
+ * WARNINGS:                                                               *
  *		none.																						*
- *                                                                         * 
- * HISTORY:                                                                * 
- *   05/31/1995 BRR : Created.                                             * 
+ *                                                                         *
+ * HISTORY:                                                                *
+ *   05/31/1995 BRR : Created.                                             *
  *=========================================================================*/
 char *ConnectionClass::Command_Name(int command)
 {

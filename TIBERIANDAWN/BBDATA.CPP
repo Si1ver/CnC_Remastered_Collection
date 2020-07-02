@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\bbdata.cpv   2.17   16 Oct 1995 16:49:46   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -505,7 +505,7 @@ static BulletTypeClass const NukeLob(
 
 #endif //PETROGLYPH_EXAMPLE_MOD
 
-			
+
 /*
 **	This is the array of pointers to the static data associated with
 **	each bullet (projectile) type.
@@ -553,23 +553,23 @@ BulletTypeClass const * const BulletTypeClass::Pointers[BULLET_COUNT] = {
  *   10/17/1994 JLB : Created.                                                                 *
  *=============================================================================================*/
 BulletTypeClass::BulletTypeClass(
-	BulletType type, 
-	char const *ininame, 
+	BulletType type,
+	char const *ininame,
 	bool is_high,
-	bool is_homing, 
-	bool is_arcing, 
+	bool is_homing,
+	bool is_arcing,
 	bool is_dropping,
-	bool is_invisible, 
-	bool is_proximity_armed, 
+	bool is_invisible,
+	bool is_proximity_armed,
 	bool is_flame_equipped,
-	bool is_fueled, 
-	bool is_faceless, 
-	bool is_inaccurate, 
-	bool is_translucent, 
+	bool is_fueled,
+	bool is_faceless,
+	bool is_inaccurate,
+	bool is_translucent,
 	bool is_antiaircraft,
 	int arming, int range, MPHType maxspeed, unsigned rot,
-	WarheadType warhead, AnimType explosion) : 
-		ObjectTypeClass(true, false, false, true, false, false, true, true, TXT_NONE, ininame, ARMOR_NONE, 0) 
+	WarheadType warhead, AnimType explosion) :
+		ObjectTypeClass(true, false, false, true, false, false, true, true, TXT_NONE, ininame, ARMOR_NONE, 0)
 {
 	Explosion = explosion;
 	IsHigh = is_high;

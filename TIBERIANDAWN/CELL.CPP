@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\cell.cpv   2.18   16 Oct 1995 16:49:20   JOE_BOSTIC  $ */
@@ -587,7 +587,7 @@ void CellClass::Occupy_Down(ObjectClass * object)
 			object->Revealed(PlayerPtr);
 		}
 	} else {
-		
+
 		for (int i = 0; i < MPlayerCount; i++) {
 			HousesType house_type = MPlayerHouses[i];
 			if (Is_Visible(house_type)) {
@@ -595,7 +595,7 @@ void CellClass::Occupy_Down(ObjectClass * object)
 				object->Revealed(house);
 			}
 		}
-	}	
+	}
 
 	/*
 	**	Special occupy bit set.
@@ -753,19 +753,19 @@ void CellClass::Overlap_Down(ObjectClass * object)
 			object->Revealed(PlayerPtr);
 		}
 	} else {
-		
+
 		if (object->Is_Techno()) {
 			TechnoClass *tech = static_cast<TechnoClass*>(object);
 			object->Revealed(tech->House);
 		} else {
-		
+
 			for (int i = 0; i < MPlayerCount; i++) {
 				HousesType house_type = MPlayerHouses[i];
 				HouseClass *house = HouseClass::As_Pointer(house_type);
 				object->Revealed(house);
 			}
-		}	
-	}	
+		}
+	}
 }
 
 
@@ -863,7 +863,7 @@ InfantryClass * CellClass::Cell_Infantry(void) const
 bool CellClass::Get_Template_Info(char *template_name, int &icon, void *&image_data)
 {
 	TemplateTypeClass const *ttype = NULL;
-	
+
 	if (TType != TEMPLATE_NONE) {
 		ttype = &TemplateTypeClass::As_Reference(TType);
 		icon = TIcon;
@@ -871,7 +871,7 @@ bool CellClass::Get_Template_Info(char *template_name, int &icon, void *&image_d
 		ttype = &TemplateTypeClass::As_Reference(TEMPLATE_CLEAR1);
 		icon = Clear_Icon();
 	}
-			  
+
 	if (ttype) {
 
 		strcpy(template_name, ttype->IniName);
@@ -2099,7 +2099,7 @@ bool CellClass::Goodie_Check(FootClass * object)
 				**	Shroud the world in blackness.
 				*/
 				case DARKNESS:
-				{	
+				{
 					new AnimClass(ANIM_CRATE_EMPULSE, Cell_Coord());
 					bool shroud = false;
 					if (GameToPlay != GAME_GLYPHX_MULTIPLAYER) {
@@ -2110,7 +2110,7 @@ bool CellClass::Goodie_Check(FootClass * object)
 						if (object->House->IsHuman) {
 							shroud = true;
 						}
-					}	
+					}
 					if (shroud) {
 						for (CELL cell = 0; cell < MAP_CELL_TOTAL; cell++) {
 							CellClass * cellptr = &Map[cell];
@@ -2135,7 +2135,7 @@ bool CellClass::Goodie_Check(FootClass * object)
 				**	Reveal the entire map.
 				*/
 				case REVEAL:
-				{	
+				{
 					bool reveal = false;
 					if (GameToPlay != GAME_GLYPHX_MULTIPLAYER) {
 						if (object->House == PlayerPtr) {
@@ -2145,8 +2145,8 @@ bool CellClass::Goodie_Check(FootClass * object)
 						if (object->House->IsHuman) {
 							reveal = true;
 						}
-					}	
-					
+					}
+
 					new AnimClass(ANIM_CRATE_EMPULSE, Cell_Coord());
 					object->House->IsVisionary = true;
 					if (reveal) {
@@ -2486,11 +2486,11 @@ ObjectClass * CellClass::Cell_Occupier(void) const
 
 /*
 **  Additions to CellClass to track visibility per-player. ST - 3/5/2019 3:08PM
-** 
-** 
-** 
-** 
-** 
+**
+**
+**
+**
+**
 */
 
 /***********************************************************************************************
@@ -2507,9 +2507,9 @@ void CellClass::Set_Mapped(HousesType house, bool set)
 		IsMappedByPlayerMask |= (1 << shift);
 	} else {
 		IsMappedByPlayerMask &= ~(1 << shift);
-	}	
-}			  
-	
+	}
+}
+
 
 /***********************************************************************************************
  * CellClass::Set_Mapped -- Set the cell mapped for the given player                           *
@@ -2526,7 +2526,7 @@ void CellClass::Set_Mapped(HouseClass *player, bool set)
 			IsMapped = set;			// Also set the regular flag in single player
 		}
 	}
-}			  
+}
 
 /***********************************************************************************************
  * CellClass::Is_Mapped -- Is the cell mapped for the given player                             *
@@ -2539,7 +2539,7 @@ bool CellClass::Is_Mapped(HousesType house) const
 {
 	int shift = (int) house;
 	return (IsMappedByPlayerMask & (1 << shift)) ? true : false;
-}			  
+}
 
 /***********************************************************************************************
  * CellClass::Is_Mapped -- Is the cell mapped for the given player                             *
@@ -2554,7 +2554,7 @@ bool CellClass::Is_Mapped(HouseClass *player) const
 		return Is_Mapped(player->Class->House);
 	}
 	return false;
-}			  
+}
 
 /***********************************************************************************************
  * CellClass::Set_Visible -- Set the cell visible for the given player                         *
@@ -2570,8 +2570,8 @@ void CellClass::Set_Visible(HousesType house, bool set)
 		IsVisibleByPlayerMask |= (1 << shift);
 	} else {
 		IsVisibleByPlayerMask &= ~(1 << shift);
-	}	
-}			  
+	}
+}
 
 
 /***********************************************************************************************
@@ -2589,7 +2589,7 @@ void CellClass::Set_Visible(HouseClass *player, bool set)
 			IsVisible = set;			// Also set the regular flag in single player. This is needed for rendering
 		}
 	}
-}			  
+}
 
 /***********************************************************************************************
  * CellClass::Is_Visible -- Is the cell visible for the given player                           *
@@ -2602,7 +2602,7 @@ bool CellClass::Is_Visible(HousesType house) const
 {
 	int shift = (int) house;
 	return (IsVisibleByPlayerMask & (1 << shift)) ? true : false;
-}			  
+}
 
 /***********************************************************************************************
  * CellClass::Is_Visible -- Is the cell visible for the given player                           *
@@ -2617,7 +2617,7 @@ bool CellClass::Is_Visible(HouseClass *player) const
 		return Is_Visible(player->Class->House);
 	}
 	return false;
-}			  
+}
 
 void CellClass::Override_Land_Type(LandType type)
 {

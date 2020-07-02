@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\abstract.cpv   2.20   16 Oct 1995 16:49:04   JOE_BOSTIC  $ */
@@ -113,7 +113,7 @@ void AbstractClass::Delete_This(void)
 	/*
 	** Apparently Watcom preserved the vtable through the virtual destructor chain, otherwise C&C would crash all the time.
 	**
-	** MSVC doesn't. It overwrites the vtable pointer with the vtable of the class currently being destructed - presumably to 
+	** MSVC doesn't. It overwrites the vtable pointer with the vtable of the class currently being destructed - presumably to
 	** prevent virtual functions of the classes already destructed from being called.
 	**
 	** So this is a hacky workaround to restore the original vtable pointer after the destructor chain has finished, for when the
@@ -130,4 +130,4 @@ void AbstractClass::Delete_This(void)
 	delete this;
 
 	*this_ptr = vtable_ptr;
-}			  
+}

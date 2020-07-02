@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\mapedit.h_v   2.19   16 Oct 1995 16:46:36   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               *** 
+ ***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -171,7 +171,7 @@ class TeamTypeClass;
 /*
 ***************************** Class Declaration *****************************
 */
-class MapEditClass : public MouseClass 
+class MapEditClass : public MouseClass
 {
 	/*
 	---------------------------- Public Interface ----------------------------
@@ -206,8 +206,8 @@ class MapEditClass : public MouseClass
 		int New_Scenario(void);
 		int Load_Scenario(void);
 		int Save_Scenario(void);
-		int Pick_Scenario(char const * caption, int *scen_nump, 
-			ScenarioPlayerType *playerp, ScenarioDirType *dirp, 
+		int Pick_Scenario(char const * caption, int *scen_nump,
+			ScenarioPlayerType *playerp, ScenarioDirType *dirp,
 			ScenarioVarType *varp, int multi);
 		int Size_Map(int x, int y, int w, int h);
 		int Scenario_Dialog(void);
@@ -236,7 +236,7 @@ class MapEditClass : public MouseClass
 		void Start_Base_Building(void);
 		void Cancel_Base_Building(void);
 		void Build_Base_To(int percent);
-		
+
 		/*
 		............................ mapedsel.cpp .............................
 		*/
@@ -246,17 +246,17 @@ class MapEditClass : public MouseClass
 		void Grab_Object(void);
 		int Move_Grabbed_Object(void);
 		bool Change_House(HousesType newhouse);
-		
+
 		/*
 		............................. mapedtm.cpp .............................
 		*/
-		void Draw_Member(TechnoTypeClass const * ptr, int index, 
+		void Draw_Member(TechnoTypeClass const * ptr, int index,
 			int quant, HousesType house, int pic_x, int pic_y);
 		void Handle_Teams(char const * caption);
 		int Select_Team(char const * caption);
 		int Edit_Team(void);
 		int Team_Members(HousesType house);
-		void Build_Mission_List(int missioncount, TeamMissionStruct *missions, 
+		void Build_Mission_List(int missioncount, TeamMissionStruct *missions,
 			char missionbuf[TeamTypeClass::MAX_TEAM_MISSIONS][20], ListClass *list);
 
 	/*
@@ -269,7 +269,7 @@ class MapEditClass : public MouseClass
 		ScenarioVarType ScenVar;
 
 		/*.....................................................................
-		Array of all TypeClasses the user can add to the map; cleared by 
+		Array of all TypeClasses the user can add to the map; cleared by
 		Clear_List(), added to by Add_To_List()
 		.....................................................................*/
 		ObjectTypeClass const * Objects[MAX_EDIT_OBJECTS];

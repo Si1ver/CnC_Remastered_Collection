@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\display.cpv   2.16   16 Oct 1995 16:48:24   JOE_BOSTIC  $ */
@@ -134,8 +134,8 @@ static int const TEX_W = 14;
 extern MixFileClass *TheaterIcons;
 
 
-//Added for getting the input for special character keys from the client 
-// - 6/26/2019 JAS 
+//Added for getting the input for special character keys from the client
+// - 6/26/2019 JAS
 extern bool DLL_Export_Get_Input_Key_State(KeyNumType key);
 
 
@@ -790,7 +790,7 @@ void DisplayClass::Set_Cursor_Shape(short const * list)
 bool DisplayClass::Passes_Proximity_Check(ObjectTypeClass const *object)
 {
 #ifdef USE_RA_AI
-	
+
 	return Passes_Proximity_Check(object, PendingHouse, CursorSize, ZoneCell + ZoneOffset);
 
 #else //USE_RA_AI		                            // Replaced by more generic function from RA, for RA AI. ST - 7/24/2019 5:46PM
@@ -1820,7 +1820,7 @@ bool DisplayClass::Map_Cell(CELL cell, HouseClass * house, bool and_for_allies)
 			}
 		}
 	}
-	
+
 	/*
 	**	Don't bother remapping this cell if it is already mapped.
 	*/
@@ -1876,7 +1876,7 @@ bool DisplayClass::Map_Cell(CELL cell, HouseClass * house, bool and_for_allies)
 			} else {
 				if (shadow != -2) {
 					//(*this)[c].IsVisible = true;
-					(*this)[c].Set_Visible(house);  // Set by player. ST - 3/6/2019 11:07AM	
+					(*this)[c].Set_Visible(house);  // Set by player. ST - 3/6/2019 11:07AM
 					(*this)[c].Redraw_Objects();
 				}
 			}

@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\defines.h_v   2.19   16 Oct 1995 16:44:54   JOE_BOSTIC  $ */
@@ -630,7 +630,7 @@ typedef enum MPHType: unsigned char {
 **	volume variations are usually unnoticable when specifying the volume
 **	to play a sample, this enumeration list creates more readable code.
 */
-typedef enum VolType : unsigned char 
+typedef enum VolType : unsigned char
 {
 	VOL_OFF=0,
 	VOL_0=VOL_OFF,
@@ -702,7 +702,7 @@ typedef enum PlayerColorType : char {
 ** usual human-vs-computer games; 2-Player games are network or modem,
 ** with 2 players; multi-player games are network with > 2 players.
 */
-typedef enum ScenarioPlayerEnum : char 
+typedef enum ScenarioPlayerEnum : char
 {
 	SCEN_PLAYER_NONE = -1,
 	SCEN_PLAYER_GDI,
@@ -1032,7 +1032,7 @@ typedef enum UnitType : char{
 
 #ifdef PETROGLYPH_EXAMPLE_MOD
 	UNIT_NUKE_TANK,			// Mammoth with a nuke
-#endif			
+#endif
 
 	UNIT_COUNT,
 	UNIT_FIRST=0
@@ -1829,7 +1829,7 @@ typedef enum WeaponType : char {
 #ifdef PETROGLYPH_EXAMPLE_MOD
 	WEAPON_NUKE_LOB,
 #endif PETROGLYPH_EXAMPLE_MOD
-			
+
 	WEAPON_COUNT
 } WeaponType;
 
@@ -2308,7 +2308,7 @@ typedef enum VocType : char{
 #ifdef PETROGLYPH_EXAMPLE_MOD
 	VOC_NUKE_LOB,		// Modded unit firing sound
 #endif
-			
+
 	VOC_COUNT,
 	VOC_BUILD_SELECT=VOC_TARGET,
 	VOC_FIRST=0
@@ -2851,11 +2851,11 @@ typedef enum OptionControlType : char {
 
 
 /*
-** 
+**
 **  Imports from Red Alert for AI. ST - 7/16/2019 11:44AM
-** 
-** 
-** 
+**
+**
+**
 */
 #ifdef USE_RA_AI
 

@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\layer.cpv   2.18   16 Oct 1995 16:50:14   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -32,7 +32,7 @@
  * Functions:                                                                                  *
  *   LayerClass::Submit -- Adds an object to a layer list.                                     *
  *   LayerClass::Sort -- Perform an incremental sort pass on the layer's objects.              *
- *   LayerClass::Sorted_Add -- Adds object in sorted order to layer.                           * 
+ *   LayerClass::Sorted_Add -- Adds object in sorted order to layer.                           *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"function.h"
@@ -54,7 +54,7 @@
  * HISTORY:                                                                                    *
  *   05/31/1994 JLB : Created.                                                                 *
  *   05/31/1994 JLB : Allows sorted insert.                                                    *
- *   01/02/1995 JLB : Fixed to work with EMSListOf template.                                   * 
+ *   01/02/1995 JLB : Fixed to work with EMSListOf template.                                   *
  *=============================================================================================*/
 bool LayerClass::Submit(ObjectClass const * object, bool sort)
 {
@@ -84,7 +84,7 @@ bool LayerClass::Submit(ObjectClass const * object, bool sort)
  *                                                                                             *
  * HISTORY:                                                                                    *
  *   10/17/1994 JLB : Created.                                                                 *
- *   03/10/1995 JLB : Uses comparison operator.                                                * 
+ *   03/10/1995 JLB : Uses comparison operator.                                                *
  *=============================================================================================*/
 void LayerClass::Sort(void)
 {
@@ -100,20 +100,20 @@ void LayerClass::Sort(void)
 }
 
 
-/*********************************************************************************************** 
- * DynamicVectorClass<T>::Sorted_Add -- Adds object in sorted order to vector.                 * 
- *                                                                                             * 
- *    Use this routine to add an object to the vector but it will be inserted in sorted        * 
- *    order. This depends on the ">" operator being defined for the vector object.             * 
- *                                                                                             * 
- * INPUT:   object   -- Reference to the object that will be added to the vector.              * 
- *                                                                                             * 
- * OUTPUT:  bool; Was the object added to the vector successfully?                             * 
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
- *   03/10/1995 JLB : Created.                                                                 * 
+/***********************************************************************************************
+ * DynamicVectorClass<T>::Sorted_Add -- Adds object in sorted order to vector.                 *
+ *                                                                                             *
+ *    Use this routine to add an object to the vector but it will be inserted in sorted        *
+ *    order. This depends on the ">" operator being defined for the vector object.             *
+ *                                                                                             *
+ * INPUT:   object   -- Reference to the object that will be added to the vector.              *
+ *                                                                                             *
+ * OUTPUT:  bool; Was the object added to the vector successfully?                             *
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   03/10/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
 int LayerClass::Sorted_Add(ObjectClass const * const object)
 {
@@ -156,6 +156,6 @@ int LayerClass::Sorted_Add(ObjectClass const * const object)
 	(*this)[index] = (ObjectClass *)object;
 	ActiveCount++;
 	return(true);
-}	
+}
 
 

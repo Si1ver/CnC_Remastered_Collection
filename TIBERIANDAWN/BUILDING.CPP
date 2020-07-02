@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\building.cpv   2.13   02 Aug 1995 17:00:14   JOE_BOSTIC  $ */
@@ -1200,7 +1200,7 @@ void BuildingClass::AI(void)
 	**	Check for demolition timeout. When timeout has expired, the building explodes.
 	*/
 	if (IsGoingToBlow && CountDown.Expired()) {
-		
+
 		/*
 		** Maybe trigger an achivement. ST - 11/14/2019 1:53PM
 		*/
@@ -1210,8 +1210,8 @@ void BuildingClass::AI(void)
 			if (saboteur && saboteur->IsActive && saboteur->House && saboteur->House->IsHuman) {
 				On_Achievement_Event(saboteur->House, "BUILDING_DESTROYED_C4", object_type->IniName);
 			}
-		}			
-		
+		}
+
 		SabotagedType = Class->Type;
 		int damage = 5000;
 		Take_Damage(damage, 0, WARHEAD_FIRE, As_Techno(WhomToRepay));
@@ -1530,13 +1530,13 @@ ResultType BuildingClass::Take_Damage(int & damage, int distance, WarheadType wa
 						TechnoTypeClass const *object_type = Techno_Type_Class();
 						if (object_type) {
 							On_Achievement_Event(source->House, "ION_DESTROYS_TEMPLE", object_type->IniName);
-						}			
+						}
 					}
 
 				} else {
 					TempleIoned = false;
 				}
-				
+
 				if (House) {
 					House->Check_Pertinent_Structures();
 				}
@@ -1684,7 +1684,7 @@ void BuildingClass::Look(bool)
 			Map.Sight_From(PlayerPtr, Coord_Cell(Center_Coord()), Class->SightRange, false);
 		}
 	} else {
-		
+
 		for (int i = 0; i < MPlayerCount; i++) {
 			HousesType house_type = MPlayerHouses[i];
 			HouseClass *house = HouseClass::As_Pointer(house_type);
@@ -2289,7 +2289,7 @@ int BuildingClass::Exit_Object(TechnoClass * base)
 				**	routine will return failure. The calling routine will probably abandon this
 				**	building in preference to building another.
 				*/
-				
+
 				BaseNodeClass * node = Base.Next_Buildable(((BuildingClass *)base)->Class->Type);
 				// Replaced with RA AI functioality. ST - 7/25/2019 4:14PM
 #ifndef USE_RA_AI
@@ -2312,7 +2312,7 @@ int BuildingClass::Exit_Object(TechnoClass * base)
 						}
 					}
 				} else {
-					
+
 					COORDINATE coord = 0;
 					if (node) {
 						coord = node->Coord;
@@ -2370,7 +2370,7 @@ int BuildingClass::Exit_Object(TechnoClass * base)
 void BuildingClass::Update_Buildables(void)
 {
 	Validate();
-	
+
 	/*
 	** Only do this for real human players. ST - 3/22/2019 1:38PM
 	*/
@@ -2593,7 +2593,7 @@ bool BuildingClass::Limbo(void)
 		}
 
 		House->IsRecalcNeeded = true;
-		
+
 #ifdef USE_RA_AI
 		//
 		// Added for RA AI in TD. ST - 7/26/2019 9:25AM
@@ -3549,7 +3549,7 @@ bool BuildingClass::Captured(HouseClass * newowner)
 					On_Achievement_Event(newowner, "OPPOSING_BUILDING_CAPTURED", object_type->IniName);
 				} else {
 					On_Achievement_Event(newowner, "BUILDING_CAPTURED", object_type->IniName);
-				}	
+				}
 			}
 		}
 
@@ -4057,7 +4057,7 @@ int BuildingClass::Mission_Deconstruction(void)
 				//if (IsOwnedByPlayer) {
 					Sound_Effect(VOC_CASHTURN, Coord);
 				}
-				
+
 				/*
 				**	Destroy all attached objects. ST - 4/24/2020 9:38PM
 				*/
@@ -4067,7 +4067,7 @@ int BuildingClass::Mission_Deconstruction(void)
 					Detach_All(true);
 					delete obj;
 				}
-				
+
 				Transmit_Message(RADIO_OVER_OUT);
 				Status = DURING;
 				Begin_Mode(BSTATE_CONSTRUCTION);
@@ -4679,7 +4679,7 @@ int BuildingClass::Mission_Missile(void)
 							Sound_Effect(VOC_NUKE_FIRE, launch);
 
 							// MBL 03.27.2020 This is never getting triggered for any player in multiplayer, so removing the check (https://jaas.ea.com/browse/TDRA-5458)
-							// if (House == PlayerPtr) 
+							// if (House == PlayerPtr)
 							{
 								Speak(VOX_NUKE_LAUNCHED); // "NUKLNCH1" - "Nuclear Weapon Launched"
 							}

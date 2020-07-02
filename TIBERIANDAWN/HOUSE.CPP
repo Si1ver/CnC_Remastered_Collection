@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\house.cpv   2.13   02 Aug 1995 17:03:50   JOE_BOSTIC  $ */
@@ -209,8 +209,8 @@ void HouseClass::One_Time(void)
 //	for (HousesType index = HOUSE_FIRST; index < HOUSE_COUNT; index++) {
 //		new(index) HouseClass;
 //	}
-	
-#ifdef USE_RA_AI	
+
+#ifdef USE_RA_AI
 	/*
 	** Required for Red Alert AI. ST - 7/23/2019 3:21PM
 	*/
@@ -470,8 +470,8 @@ HouseClass::HouseClass(HousesType house) :
 	/*
 	** New AI variables from RA. Need to add to save/load?
 	*/
-#ifdef USE_RA_AI	
-	
+#ifdef USE_RA_AI
+
 	IsBaseBuilding = true;
 	Center = 0;
 	Radius = 0;
@@ -481,7 +481,7 @@ HouseClass::HouseClass(HousesType house) :
 		ZoneInfo[zone].InfantryDefense = 0;
 	}
 
-		
+
 	LATime = 0;
 	LAType = RTTI_NONE;
 	LAZone = ZONE_NONE;
@@ -496,11 +496,11 @@ HouseClass::HouseClass(HousesType house) :
 	memset(UQuantity, '\0', sizeof(UQuantity));
 	memset(IQuantity, '\0', sizeof(IQuantity));
 	memset(AQuantity, '\0', sizeof(AQuantity));
-		
+
 	Attack = 0;
 
 	Enemy = HOUSE_NONE;
-			
+
 	AITimer = 0;
 
 	BuildStructure = STRUCT_NONE;
@@ -727,7 +727,7 @@ bool HouseClass::Can_Build(TechnoTypeClass const * type, HousesType house) const
 	if (DebugUnlockBuildables) {
 		level = 98;
 		pre = 0;
-	}			
+	}
 
 	if (Debug_Cheat) level = 98;
 	return((pre & flags) == pre && type->Scenario <= level);
@@ -1169,8 +1169,8 @@ void HouseClass::AI(void)
 			Speak(VOX_NO_CASH);
 
 			//
-			// !!! MBL 03.18.2020: 
-			// !!! Changing "Insufficient Funds" speak delay for this case to 1 minute instead of 2. 
+			// !!! MBL 03.18.2020:
+			// !!! Changing "Insufficient Funds" speak delay for this case to 1 minute instead of 2.
 			// !!! Note that all other speak delays are 2 minutes in TD (SPEAK_DELAY) and RA (Rule.SpeakDelay)
 			// !!! This is per https://jaas.ea.com/browse/TDRA-4659 (Ted and Jim)
 			// !!! I Checked with Joe mostly okay with this change, but want to note that we are changing original behavior
@@ -1567,19 +1567,19 @@ void HouseClass::AI(void)
 		}
 	}
 
-	
+
 	VisibleCredits.AI(false, this, true);
 
 
 	/*
 	** Copied from Red Alert for multiplayer AI. ST - 7/23/2019 3:02PM
-	** 
-	** 
-	**	
+	**
+	**
+	**
 	*/
-#ifdef USE_RA_AI	
+#ifdef USE_RA_AI
 	if (GameToPlay == GAME_GLYPHX_MULTIPLAYER && IsHuman == false) {
-		
+
 		/*
 		** Perform any expert system AI processing.
 		*/
@@ -2381,7 +2381,7 @@ ProdFailType HouseClass::Begin_Production(RTTIType type, int id)
 			if (IsHuman) {
 				Sidebar_Glyphx_Factory_Link(*factory, type, id, this);
 			}
-		} else {		 
+		} else {
 			if (PlayerPtr == this) {
 				Map.Factory_Link(*factory, type, id);
 			}
@@ -2644,11 +2644,11 @@ bool HouseClass::Place_Special_Blast(SpecialWeaponType id, CELL cell)
 	Validate();
 	BuildingClass * launchsite = 0;
 	AnimClass * anim = 0;
-	
+
 	// Added. ST - 12/2/2019 11:26AM
 	bool fired = false;
 	const char *what = NULL;
-	
+
 	int index;
 	switch (id) {
 
@@ -2875,7 +2875,7 @@ bool HouseClass::Place_Object(RTTIType type, CELL cell)
 					**	The object could not leave under it's own power. Just wait
 					**	until the player tries to place the object again.
 					*/
-					
+
 					/*
 					** Flag that it's blocked so we can re-try the exit later.
 					** This would have been a bad idea under the old peer-peer code since it would have pumped events into
@@ -4776,13 +4776,13 @@ void HouseClass::Check_Pertinent_Structures(void)
 	if (!Special.IsEarlyWin) {
 		return;
 	}
-		  
+
 	if (IsToDie || IsToWin || IsToLose) {
 		return;
 	}
 
 	bool any_good_buildings = false;
-	
+
 	for (int index = 0; index < Buildings.Count(); index++) {
 		BuildingClass *b = Buildings.Ptr(index);
 
@@ -4795,7 +4795,7 @@ void HouseClass::Check_Pertinent_Structures(void)
 			}
 		}
 	}
-	
+
 	if (!any_good_buildings) {
 		for (int index = 0; index < Units.Count(); index++) {
 			UnitClass * unit = Units.Ptr(index);
@@ -4830,7 +4830,7 @@ void HouseClass::Check_Pertinent_Structures(void)
  *   4/23/2020 11:06PM ST : Created.                                                           *
  *=============================================================================================*/
 void HouseClass::Init_Unit_Trackers(void)
-{		
+{
 	AircraftTotals = new UnitTrackerClass( (int) AIRCRAFT_COUNT);
 	InfantryTotals = new UnitTrackerClass( (int) INFANTRY_COUNT);
 	UnitTotals = new UnitTrackerClass ( (int) UNIT_COUNT);
@@ -4860,7 +4860,7 @@ void HouseClass::Init_Unit_Trackers(void)
  *   4/23/2020 11:06PM ST : Created.                                                           *
  *=============================================================================================*/
 void HouseClass::Free_Unit_Trackers(void)
-{		
+{
 	if (AircraftTotals) {
 		delete AircraftTotals;
 		AircraftTotals = NULL;
@@ -4947,7 +4947,7 @@ void HouseClass::Free_Unit_Trackers(void)
 
 
 
-#ifdef USE_RA_AI	
+#ifdef USE_RA_AI
 
 
 
@@ -5292,7 +5292,7 @@ void HouseClass::Recalc_Center(void)
 		*/
 		if (count > 1) {
 			int radius = 0;
-	
+
 			for (index = 0; index < Buildings.Count(); index++) {
 				BuildingClass const * b = Buildings.Ptr(index);
 
@@ -5987,7 +5987,7 @@ bool HouseClass::AI_Raise_Power(UrgencyType urgency) const
 	/*
 	**	Sell off structures in this order.
 	*/
-#if (0)	
+#if (0)
 	static struct {
 		StructType Structure;
 		UrgencyType Urgency;
@@ -6059,7 +6059,7 @@ bool HouseClass::AI_Raise_Money(UrgencyType urgency) const
 	/*
 	**	Sell off structures in this order.
 	*/
-#if (0)	
+#if (0)
 	static struct {
 		StructType	Structure;
 		UrgencyType	Urgency;
@@ -6459,7 +6459,7 @@ int HouseClass::AI_Building(void)
 						*choiceptr = BuildChoiceClass((current < (unsigned)threat_quantity) ? URGENCY_HIGH : URGENCY_MEDIUM, b->Type);
 					}
 				} else {
-#if (0)					
+#if (0)
 					b = &BuildingTypeClass::As_Reference(STRUCT_AAGUN);
 					if (Can_Build(b, ActLike) && (b->Cost_Of() < money || hasincome)) {
 						choiceptr = BuildChoice.Alloc();
@@ -6529,7 +6529,7 @@ int HouseClass::AI_Building(void)
 				}
 			}
 		}
-		
+
 		/*
 		**	An airstrip would be good.
 		*/
@@ -6602,7 +6602,7 @@ int HouseClass::AI_Unit(void)
 		}
 	}
 
-	//if (Session.Type == GAME_NORMAL) {  // Why? ST - 7/24/2019 2:38PM	
+	//if (Session.Type == GAME_NORMAL) {  // Why? ST - 7/24/2019 2:38PM
 
 		int counter[UNIT_COUNT];
 		memset(counter, 0x00, sizeof(counter));
@@ -6860,7 +6860,7 @@ int HouseClass::AI_Infantry(void)
 
 	//if (Session.Type == GAME_NORMAL) {
 	if (GameToPlay == GAME_NORMAL) {		// Not used for skirmish? ST - 7/24/2019 2:59PM
-#if (0)		
+#if (0)
 		TechnoTypeClass const * techno = 0;
 		int counter[INFANTRY_COUNT];
 		memset(counter, 0x00, sizeof(counter));
@@ -8384,7 +8384,7 @@ bool HouseClass::Is_Allowed_To_Ally(HousesType house) const
 void HouseClass::Computer_Paranoid(void)
 {
 	if (GameToPlay != GAME_GLYPHX_MULTIPLAYER) {		// Re-enable this for multiplayer if we support classic team/ally mode. ST - 10/29/2019
-	
+
 		/*
 		**	Loop through every computer controlled house and make allies with all other computer
 		**	controlled houses and then make enemies with all other human controlled houses.

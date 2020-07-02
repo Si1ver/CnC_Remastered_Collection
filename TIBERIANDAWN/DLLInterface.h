@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 
@@ -18,15 +18,15 @@
 
 #ifndef DLL_INTERFACE_H
 #define DLL_INTERFACE_H
-		
+
 struct CarryoverObjectStruct;
 
 
 /*
 ** DLL Interface version
-** 
-** 
-** 
+**
+**
+**
 */
 #define CNC_DLL_API_VERSION		0x100
 
@@ -45,8 +45,8 @@ struct CarryoverObjectStruct;
 
 /*
 ** Interface structs require stricter packing
-** 
-** 
+**
+**
 */
 #pragma pack(push)
 #pragma pack(1)
@@ -55,10 +55,10 @@ struct CarryoverObjectStruct;
 
 
 /**************************************************************************************
-** 
+**
 ** Game state request types
-** 
-** 
+**
+**
 */
 enum GameStateRequestEnum {
 	GAME_STATE_NONE,
@@ -70,16 +70,16 @@ enum GameStateRequestEnum {
 	GAME_STATE_SHROUD,
 	GAME_STATE_OCCUPIER,
 	GAME_STATE_PLAYER_INFO
-};	
+};
 
 
 
 
 /**************************************************************************************
-** 
+**
 ** Static map data (tiles)
-** 
-** 
+**
+**
 */
 struct CNCStaticCellStruct {
 	char	TemplateTypeName[32];
@@ -112,7 +112,7 @@ struct CNCMapDataStruct {
 
 	CnCTheaterType Theater;
 	char ScenarioName[_MAX_FNAME+_MAX_EXT];
-	
+
 	CNCStaticCellStruct StaticCells[MAX_EXPORT_CELLS];
 };
 
@@ -120,10 +120,10 @@ struct CNCMapDataStruct {
 
 
 /**************************************************************************************
-** 
+**
 **  Object type enum
-** 
-** 
+**
+**
 */
 #define DLL_LAYER_COUNT 3
 
@@ -146,8 +146,8 @@ enum DllObjectTypeEnum {
 	BUILDING_TYPE,
 	VESSEL,
 	VESSEL_TYPE
-};	
- 
+};
+
 
 
 /**************************************************************************************
@@ -182,10 +182,10 @@ enum DllActionTypeEnum : unsigned char {
 
 
 /**************************************************************************************
-** 
+**
 **  Object state data
-** 
-** 
+**
+**
 */
 #define MAX_OCCUPY_CELLS 36
 #define MAX_OBJECT_PIPS 18
@@ -206,10 +206,10 @@ struct CNCObjectStruct {
 	void				*CNCInternalObjectPointer;
 	char				TypeName[CNC_OBJECT_ASSET_NAME_LENGTH];
 	char 				AssetName[CNC_OBJECT_ASSET_NAME_LENGTH];		// CNC uses 8.3 filenames, so it shouldn't need to be bigger than 9
-	DllObjectTypeEnum	Type;	
+	DllObjectTypeEnum	Type;
 	int					ID;
 	int					BaseObjectID;
-	DllObjectTypeEnum	BaseObjectType;	
+	DllObjectTypeEnum	BaseObjectType;
 	int					PositionX;
 	int					PositionY;
 	int					Width;
@@ -289,9 +289,9 @@ struct CNCObjectListStruct {
 
 
 /**************************************************************************************
-** 
+**
 **  Placement validity data
-** 
+**
 **  Used to pass back info about tructure placement validity
 */
 struct CNCPlacementCellInfoStruct {
@@ -309,10 +309,10 @@ struct CNCPlacementInfoStruct {
 
 
 /**************************************************************************************
-** 
+**
 **  Sidebar/construction state data
-** 
-** 
+**
+**
 */
 enum DllSuperweaponTypeEnum {
 	SW_NONE,
@@ -366,8 +366,8 @@ struct CNCSidebarStruct {
 	int							MissionTimer;
 	unsigned int	  			UnitsKilled;				// Total count of enemy units killed by this player; Includes Infantry, Vehicles, Aircraft
 	unsigned int	  			BuildingsKilled;        // Total count of enemy structures killed by this player
-	unsigned int	  			UnitsLost;              // Total count player-owned units killed/lost           
-	unsigned int	  			BuildingsLost;          // Total count player-owned structures killed/lost      
+	unsigned int	  			UnitsLost;              // Total count player-owned units killed/lost
+	unsigned int	  			BuildingsLost;          // Total count player-owned structures killed/lost
 	unsigned int 				TotalHarvestedCredits;  // Complete total of gained credits over the match (does not include starting credits)
 	bool							RepairBtnEnabled;
 	bool							SellBtnEnabled;
@@ -390,7 +390,7 @@ enum SidebarRequestEnum {
 	SIDEBAR_REQUEST_DISABLE_QUEUE,
 	SIDEBAR_REQUEST_START_CONSTRUCTION_MULTI,
 	SIDEBAR_REQUEST_CANCEL_CONSTRUCTION_MULTI
-};	
+};
 
 enum SuperWeaponRequestEnum {
 	SUPERWEAPON_REQUEST_PLACE_SUPER_WEAPON
@@ -405,10 +405,10 @@ enum ControlGroupRequestEnum {
 
 
 /**************************************************************************************
-** 
+**
 **  Input events sent into the DLL
-** 
-** 
+**
+**
 */
 enum InputRequestEnum {
 	INPUT_REQUEST_NONE,
@@ -488,13 +488,13 @@ enum SpecialKeyRequestEnum {
 
 
 /**************************************************************************************
-** 
+**
 **  Non-static map data.
-** 
-**  Per-cell smudges and overlays. Smudges are used for things like craters and structure bibs that draw under units. 
+**
+**  Per-cell smudges and overlays. Smudges are used for things like craters and structure bibs that draw under units.
 **  Overlays are things like walls and tiberium that can't move from the cell but aren't flat like smudges.
-** 
-** 
+**
+**
 */
 struct CNCDynamicMapEntryStruct {
 	char						AssetName[16];
@@ -531,12 +531,12 @@ struct CNCDynamicMapStruct {
 
 
 /**************************************************************************************
-** 
+**
 **  Event data
-** 
+**
 **  Used to call back into the GlyphX engine for one-time events like sound effect triggers
-** 
-** 
+**
+**
 */
 enum EventCallbackType {
 	CALLBACK_EVENT_INVALID = -1,
@@ -578,7 +578,7 @@ struct GameOverMultiPlayerStatsStruct
 	int ResourcesGathered;
 	int TotalUnitsKilled;
 	int TotalStructuresKilled;
-	int Efficiency; // AKA Economy	
+	int Efficiency; // AKA Economy
 	int Score;
 };
 
@@ -600,7 +600,7 @@ struct EventCallbackStruct {
 	__int64 GlyphXPlayerID;
 
 	union {
-		
+
 		struct SoundEffectEvent {
 			int SFXIndex;
 			int Variation;
@@ -611,13 +611,13 @@ struct EventCallbackStruct {
 			int SoundEffectPriority;
 			int SoundEffectContext;
 		} SoundEffect;
-		
+
 		struct SpeechEvent {
 			int SpeechIndex;
 			int PlayerID;		//TO_FIX
 			char SpeechName[ 16 ];
 		} Speech;
-			  
+
 		struct GameOverEvent {
 			bool Multiplayer;
 			//
@@ -648,7 +648,7 @@ struct EventCallbackStruct {
   		int MultiPlayerTotalPlayers;
 			GameOverMultiPlayerStatsStruct MultiPlayerPlayersData[ GAME_OVER_MULTIPLAYER_MAX_PLAYERS_TRACKED ];
 		} GameOver;
-		
+
 		struct DebugPrintEvent {
 			const char *PrintString;
 		} DebugPrint;
@@ -709,12 +709,12 @@ struct EventCallbackStruct {
 
 
 /**************************************************************************************
-** 
+**
 **  Multiplayer setup data
-** 
+**
 **  Used to pass multiplayer setup info into the C&C code from the GlyphX engine
-** 
-** 
+**
+**
 */
 
 
@@ -817,10 +817,10 @@ struct CNCRulesDataStruct
 
 
 /**************************************************************************************
-** 
+**
 **  Debug input interface
-** 
-** 
+**
+**
 */
 
 enum DebugRequestEnum {
@@ -834,7 +834,7 @@ enum DebugRequestEnum {
 	DEBUG_REQUEST_UNLOCK_BUILDABLES,
 	DEBUG_REQUEST_FORCE_CRASH,
 	DEBUG_REQUEST_SET_GLOBAL_FLAG,
-};	
+};
 
 
 
@@ -842,12 +842,12 @@ enum DebugRequestEnum {
 
 
 /**************************************************************************************
-** 
+**
 **  Shroud data.
-** 
+**
 **  Per-cell shroud info
-** 
-** 
+**
+**
 */
 struct CNCShroudEntryStruct {
 	char			ShadowIndex;
@@ -917,8 +917,8 @@ struct CarryoverObjectStruct
 
 /*
 ** End of strict structure packing
-** 
-** 
+**
+**
 */
 #pragma pack(pop)
 

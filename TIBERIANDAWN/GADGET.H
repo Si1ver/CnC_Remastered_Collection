@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\gadget.h_v   2.17   16 Oct 1995 16:46:34   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               *** 
+ ***              C O N F I D E N T I A L  ---  W E S T W O O D  S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -137,7 +137,7 @@ class GadgetClass : public LinkClass
 		virtual void Clear_Focus(void);
 		virtual bool Has_Focus(void);
 		virtual int Is_List_To_Redraw(void);
-		
+
 		/*
 		**	General render function.
 		*/
@@ -158,7 +158,7 @@ class GadgetClass : public LinkClass
 		**	Processes the event flags so that if this gadget needs to "stick" or
 		**	"unstick", it will be properly flagged. Call this function if you are
 		**	going to clear the button press flags before calling the base class
-		**	Action() function. Otherwise, calling this function manually, is 
+		**	Action() function. Otherwise, calling this function manually, is
 		**	unnecessary since the base class Action() function already does so.
 		*/
 		virtual void Sticky_Process(unsigned flags);
@@ -217,7 +217,7 @@ class GadgetClass : public LinkClass
 		unsigned IsDisabled:1;
 
 		/*
-		**	These are the action flags that are used to determine when the action function 
+		**	These are the action flags that are used to determine when the action function
 		**	should be called. Example: If this gadget only wants the action button called when
 		**	the left mouse button is pressed over the its region, then the flag will be set
 		**	to LEFTPRESS.

@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\init.cpv   2.18   16 Oct 1995 16:50:16   JOE_BOSTIC  $ */
@@ -302,7 +302,7 @@ bool Init_Game(int , char *[])
 	}
 #endif
 
-#if (0)	//ST - 1/2/2019 5:49PM			
+#if (0)	//ST - 1/2/2019 5:49PM
 	CCDebugString ("C&C95 - About to search for CD drives\n");
 	/*
 	**	Always try to look at the CD-ROM for data files.
@@ -385,7 +385,7 @@ bool Init_Game(int , char *[])
 	char scan_path[_MAX_PATH];
 
 	for (int p=0 ; p<100 ; p++) {
-		
+
 		strcpy(search_path, path);
 		if (search_path[strlen(search_path) - 1] != '\\') {
 			strcat(search_path, "\\");
@@ -407,7 +407,7 @@ bool Init_Game(int , char *[])
 			} while (FindNextFile(file_handle, &find_data));
 			FindClose(file_handle);
 		}
-		
+
 		memset(&find_data, 0, sizeof(find_data));
 		strcpy(scan_path, search_path);
 		strcat(scan_path, "Ss*.MIX");
@@ -1969,14 +1969,14 @@ void Anim_Init(void)
 	//AnimControl.Volume = 0x00FF;
 	//AnimControl.AudioRate = 22050;
 //	if (NewConfig.Speed) AnimControl.AudioRate = 11025;
-	
-	
+
+
 	//PG_TO_FIX
 #if (0)
 	AnimControl.SoundObject = SoundObject;	//Get_Sound_Object();
 	AnimControl.PrimaryBufferPtr = PrimaryBufferPtr;	//Get_Primart_Buffer();
 #endif
-	
+
 	//if (!Debug_Quiet && Get_Digi_Handle() != -1) {
 		//AnimControl.OptionFlags |= VQAOPTF_AUDIO;
 	//}
@@ -2034,7 +2034,7 @@ bool Parse_Command_Line(int argc, char *argv[])
 		char arg_string[512];
 		int str_len = strlen(argv[index]);
 		char *src = argv[index];
-		char *dest = arg_string; 
+		char *dest = arg_string;
 		for (int i=0 ; i<str_len ; i++) {
 			if (*src == '\"') {
 				src++;

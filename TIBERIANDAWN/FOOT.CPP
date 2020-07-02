@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\foot.cpv   2.17   16 Oct 1995 16:51:42   JOE_BOSTIC  $ */
@@ -1340,7 +1340,7 @@ void FootClass::Active_Click_With(ActionType action, CELL cell)
 				Player_Assign_Mission(MISSION_GUARD_AREA, ::As_Target(cell));
 			}
 			break;
-		// END MBL 05.15.2020 
+		// END MBL 05.15.2020
 	}
 }
 
@@ -1777,30 +1777,30 @@ void FootClass::Death_Announcement(TechnoClass const * source) const
 			if (What_Am_I() == RTTI_INFANTRY && ((InfantryTypeClass const &)Class_Of()).IsCivilian && !((InfantryClass *)this)->IsTechnician) {
 				// if (Options.IsDeathAnnounce) Speak(VOX_DEAD_CIV); // MBL 02.06.2020
 				if (Options.IsDeathAnnounce) Speak(VOX_DEAD_CIV, House, Center_Coord());
-			} 
+			}
 			else {
 				if (House != PlayerPtr && GameToPlay != GAME_NORMAL) {
 					// if (Options.IsDeathAnnounce) Speak(VOX_ENEMY_UNIT); // MBL 02.06.2020
 					if (Options.IsDeathAnnounce) Speak(VOX_ENEMY_UNIT, House);
-				} 
+				}
 				else {
 					if (((GameToPlay == GAME_GLYPHX_MULTIPLAYER && House->IsHuman) || House == PlayerPtr) || Options.IsDeathAnnounce) { // ST
 						if (!Options.IsDeathAnnounce) { // MBL 02.06.2020
 							// Speak(VOX_UNIT_LOST);
 							Speak(VOX_UNIT_LOST, House, Center_Coord());
-						} 
+						}
 						else {
 							switch (House->ActLike) {
 								case HOUSE_GOOD:
 									// Speak(VOX_DEAD_GDI); // MBL 02.06.2020
 									Speak(VOX_DEAD_GDI, House, Center_Coord());
 									break;
-		
+
 								case HOUSE_BAD:
 									// Speak(VOX_DEAD_NOD); // MBL 02.06.2020
 									 Speak(VOX_DEAD_NOD, House, Center_Coord());
 									break;
-		
+
 								default:
 									break;
 							}

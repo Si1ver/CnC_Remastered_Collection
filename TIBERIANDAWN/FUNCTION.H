@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\function.h_v   2.21   16 Oct 1995 16:46:44   JOE_BOSTIC  $*/
@@ -641,7 +641,7 @@ bool Save_Misc_Values(FileClass &file);
 bool Get_Savefile_Info(int id, char *buf, unsigned *scenp, HousesType *housep);
 bool Load_Game(int id);
 bool Load_Game(const char *file_name);
-//bool Read_Object (void *ptr, int base_size, int class_size, FileClass & file, void * vtable);  // Original Read_Object prototype. ST - 9/17/2019 12:50PM		
+//bool Read_Object (void *ptr, int base_size, int class_size, FileClass & file, void * vtable);  // Original Read_Object prototype. ST - 9/17/2019 12:50PM
 bool Read_Object(void *ptr, int class_size, FileClass & file, bool has_vtable);
 bool Save_Game(int id,char *descr);
 bool Save_Game(const char *file_name, const char *descr);

@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\ioobj.cpv   2.18   16 Oct 1995 16:51:22   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -151,7 +151,7 @@ bool TeamTypeClass::Load(FileClass & file)
 {
 	::new (this) TeamTypeClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractTypeClass), sizeof(*this), file, VTable));
 }
 
@@ -251,7 +251,7 @@ bool TeamClass::Load(FileClass & file)
 {
 	::new (this) TeamClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -385,7 +385,7 @@ bool TriggerClass::Load(FileClass & file)
 {
 	::new (this) TriggerClass();
 	int rc = Read_Object(this, sizeof(*this), file, false);
-	
+
 	//int rc = Read_Object(this, sizeof(*this), sizeof(*this), file, 0);
 
 	/*
@@ -490,7 +490,7 @@ bool AircraftClass::Load(FileClass & file)
 {
 	::new (this) AircraftClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -598,7 +598,7 @@ bool AnimClass::Load(FileClass & file)
 {
 	::new (this) AnimClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -736,7 +736,7 @@ bool BuildingClass::Load(FileClass & file)
 {
 	::new (this) BuildingClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -787,8 +787,8 @@ void BuildingClass::Code_Pointers(void)
 	((BuildingTypeClass const *&)Class) = (BuildingTypeClass *)Class->Type;
 
 	/*------------------------------------------------------------------------
-	Code the Factory value; there's not target conversion routine for factories, 
-	so just use its Array ID, plus 1 so it doesn't look like a NULL value when 
+	Code the Factory value; there's not target conversion routine for factories,
+	so just use its Array ID, plus 1 so it doesn't look like a NULL value when
 	it's converted back
 	------------------------------------------------------------------------*/
 	if (Factory) {
@@ -859,7 +859,7 @@ bool BulletClass::Load(FileClass & file)
 {
 	::new (this) BulletClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -983,7 +983,7 @@ bool InfantryClass::Load(FileClass & file)
 {
 	::new (this) InfantryClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -1089,7 +1089,7 @@ bool OverlayClass::Load(FileClass & file)
 {
 	::new (this) OverlayClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -1195,7 +1195,7 @@ bool SmudgeClass::Load(FileClass & file)
 {
 	::new (this) SmudgeClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -1301,7 +1301,7 @@ bool TemplateClass::Load(FileClass & file)
 {
 	::new (this) TemplateClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -1407,7 +1407,7 @@ bool TerrainClass::Load(FileClass & file)
 {
 	::new (this) TerrainClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -1515,7 +1515,7 @@ bool UnitClass::Load(FileClass & file)
 {
 	::new (this) UnitClass();
 	return(Read_Object(this, sizeof(*this), file, true));
-	
+
 	//return(Read_Object(this, sizeof(AbstractClass), sizeof(*this), file, VTable));
 }
 
@@ -1604,7 +1604,7 @@ bool FactoryClass::Load(FileClass & file)
 {
 	::new (this) FactoryClass();
 	return(Read_Object(this, sizeof(*this), file, false));
-	
+
 	//return(Read_Object(this, sizeof(StageClass), sizeof(*this), file, 0));
 }
 
@@ -1730,7 +1730,7 @@ bool LayerClass::Load(FileClass & file)
 		}
 		Add(ptr);
 	}
-	
+
 	return(true);
 }
 
@@ -1850,7 +1850,7 @@ bool HouseClass::Load(FileClass & file)
 {
 	::new (this) HouseClass();
 	return(Read_Object(this, sizeof(*this), file, false));
-	
+
 	//return(Read_Object(this, sizeof(*this), sizeof(*this), file, 0));
 }
 
@@ -1946,7 +1946,7 @@ bool ScoreClass::Load(FileClass & file)
 {
 	::new (this) ScoreClass();
 	return(Read_Object(this, sizeof(*this), file, false));
-	
+
 	//return(Read_Object(this, sizeof(*this), sizeof(*this), file, 0));
 }
 

@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\ipx.h_v   2.17   16 Oct 1995 16:46:26   JOE_BOSTIC  $ */
@@ -112,10 +112,10 @@ typedef struct {
 ********************************** Defines **********************************
 */
 /*---------------------------------------------------------------------------
-These defines are for the IPX functions.  The function number is specified 
-by placing it in BX when IPX is called.  There are two ways to invoke IPX: 
-use interrupt 0x7a, or use a function whose address is obtained by calling 
-interrupt 0x2f with AX=0x7a00; the function address is returned in ES:DI.  
+These defines are for the IPX functions.  The function number is specified
+by placing it in BX when IPX is called.  There are two ways to invoke IPX:
+use interrupt 0x7a, or use a function whose address is obtained by calling
+interrupt 0x2f with AX=0x7a00; the function address is returned in ES:DI.
 This is the preferred method, since other apps are known to use int 0x7a.
 ---------------------------------------------------------------------------*/
 #define	IPX_OPEN_SOCKET						0x0000
@@ -172,7 +172,7 @@ int IPX_Open_Socket(unsigned short socket);
 int IPX_Close_Socket(unsigned short socket);
 int IPX_Get_Connection_Number(void);
 int IPX_Get_1st_Connection_Num (char *username);
-int IPX_Get_Internet_Address(int connection_number, 
+int IPX_Get_Internet_Address(int connection_number,
 	unsigned char *network_number, unsigned char *physical_node);
 int IPX_Get_User_ID(int connection_number, char *user_id);
 int IPX_Listen_For_Packet(struct ECB *ecb_ptr);

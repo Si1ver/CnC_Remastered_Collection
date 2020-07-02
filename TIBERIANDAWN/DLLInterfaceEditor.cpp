@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 #include <stdio.h>
@@ -167,9 +167,9 @@ void CNC_Editor_Setup_Content_Directory(char* cncdata_directory, int CD_index)
 * returns EDITOR_COMMMAND_SUCCESS on success, all other values are failure
 **************************************************************************************************/
 extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Load_Map(
-	char* cncdata_directory, 
-	char* house_name, 
-	int scenario_index, 
+	char* cncdata_directory,
+	char* house_name,
+	int scenario_index,
 	char* east_west,
 	char* variant)
 {
@@ -314,7 +314,7 @@ extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Clear_Map()
 	if (EditorMapInitialized)
 	{
 		Map.Init_Clear();
-		
+
 		int count = sizeof(MixFileNames) / sizeof(MixFileNames[0]);
 		for (int i = count - 1; i >= 0; --i)
 		{
@@ -443,14 +443,14 @@ extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Cell_Data(int x, int
 /**************************************************************************************************
 * CNC_Editor_Get_Cell_Texture_Buffer
 *
-* x,y: 
+* x,y:
 * out_width, out_height: dimensions of the outputed texture array
 * out_texture_array: output array of unsigned chars storing the color data for the requested object,
 *							every 3 chars is a set of RGB values
 **************************************************************************************************/
 extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Cell_Texture_Buffer(int x, int y, int& out_width, int& out_height, SAFEARRAY*& out_texture_array)
 {
-	
+
 	int map_cell_x = Map.MapCellX;
 	int map_cell_y = Map.MapCellY;
 	int map_cell_width = Map.MapCellWidth;
@@ -538,7 +538,7 @@ extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Cell_Texture_Buffer(
 			return EDITOR_COMMMAND_SUCCESS;
 		}
 	}
-	
+
 	return EDITOR_COMMMAND_FAILURE;
 }
 
@@ -607,7 +607,7 @@ extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Template_Data(int te
 
 /**************************************************************************************************
 * CNC_Editor_Get_Scenario_Names
-* 
+*
 **************************************************************************************************/
 extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Scenario_Names(char* cncdata_directory, int CD)
 {
@@ -706,7 +706,7 @@ extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Scenario_Names(char*
 						{
 							//fprintf(names_file, "%s - \t$Intro:%s \t\t$Brief:%s \t\t$Win:%s \t\t$Lose:%s \t\t$Action:%s \t\t$Theme:%s", scenario_name, IntroMovie, BriefMovie, WinMovie, LoseMovie, ActionMovie, MovieThemeName);
 							fprintf(names_file, "------------------%s-------------- %s \n", scenario_name, MovieThemeName);
-							
+
 							if (stricmp("x", IntroMovie) != 0)
 							{
 								fprintf(names_file, "<IntroMovieName network=\"client\">%s</IntroMovieName>\n", IntroMovie);
@@ -729,7 +729,7 @@ extern "C" __declspec(dllexport) int __cdecl CNC_Editor_Get_Scenario_Names(char*
 					}
 
 
-					
+
 				}
 			}
 		}

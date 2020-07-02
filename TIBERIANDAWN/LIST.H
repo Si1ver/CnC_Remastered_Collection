@@ -1,35 +1,35 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\list.h_v   2.17   16 Oct 1995 16:46:24   JOE_BOSTIC  $ */
-/*********************************************************************************************** 
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
- *********************************************************************************************** 
- *                                                                                             * 
- *                 Project Name : Command & Conquer                                            * 
- *                                                                                             * 
- *                    File Name : LIST.H                                                       * 
- *                                                                                             * 
- *                   Programmer : Joe L. Bostic                                                * 
- *                                                                                             * 
- *                   Start Date : 01/15/95                                                     * 
- *                                                                                             * 
- *                  Last Update : January 15, 1995 [JLB]                                       * 
- *                                                                                             * 
- *---------------------------------------------------------------------------------------------* 
- * Functions:                                                                                  * 
+/***********************************************************************************************
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
+ ***********************************************************************************************
+ *                                                                                             *
+ *                 Project Name : Command & Conquer                                            *
+ *                                                                                             *
+ *                    File Name : LIST.H                                                       *
+ *                                                                                             *
+ *                   Programmer : Joe L. Bostic                                                *
+ *                                                                                             *
+ *                   Start Date : 01/15/95                                                     *
+ *                                                                                             *
+ *                  Last Update : January 15, 1995 [JLB]                                       *
+ *                                                                                             *
+ *---------------------------------------------------------------------------------------------*
+ * Functions:                                                                                  *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #ifndef LIST_H
@@ -45,9 +45,9 @@
  *                                                                         *
  * INPUT:      int x -- x position of gadget											*
  *					int y -- y position of gadget											*
- *					int w -- width of gadget												*							
- *					int h -- height of gadget												*							
- *					UWORD flags -- see enumeration choices								*							
+ *					int w -- width of gadget												*
+ *					int h -- height of gadget												*
+ *					UWORD flags -- see enumeration choices								*
  *                                                                         *
  * OUTPUT:     none.																			*
  * WARNINGS:														   						*
@@ -74,7 +74,7 @@ class ListClass : public ControlClass
 		virtual void Peer_To_Peer(unsigned flags, KeyNumType & key, ControlClass & whom);
 		virtual void Remove_Item(char const * text);
 		virtual int  Remove_Scroll_Bar(void);
-		virtual void Set_Selected_Index(int index);  
+		virtual void Set_Selected_Index(int index);
 		virtual void Set_Tabs(int const * tabs);
 		virtual int  Set_View_Index(int index);
 		virtual void Step(int up);
@@ -113,7 +113,7 @@ class ListClass : public ControlClass
 		//EMSListOf<char const *> List;
 
 		/*
-		**	This is the total pixel height of a standar line of text. This is greatly 
+		**	This is the total pixel height of a standar line of text. This is greatly
 		**	influenced by the TextFlags value.
 		*/
 		int LineHeight;

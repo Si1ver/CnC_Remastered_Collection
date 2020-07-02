@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c0\vcs\code\connmgr.h_v   1.25   02 Jan 1996 11:14:54   JOE_BOSTIC  $ */
@@ -99,9 +99,9 @@ class ConnManClass
 		/*.....................................................................
 		Sending & receiving data
 		.....................................................................*/
-		virtual int Send_Private_Message (void *buf, int buflen, 
+		virtual int Send_Private_Message (void *buf, int buflen,
 			int ack_req = 1, int conn_id = CONNECTION_NONE) = 0;
-		virtual int Get_Private_Message (void *buf, int *buflen, 
+		virtual int Get_Private_Message (void *buf, int *buflen,
 			int *conn_id) = 0;
 
 		/*.....................................................................
@@ -124,13 +124,13 @@ class ConnManClass
 		.....................................................................*/
 		virtual void Reset_Response_Time(void) = 0;
 		virtual unsigned long Response_Time(void) = 0;
-		virtual void Set_Timing (unsigned long retrydelta, 
+		virtual void Set_Timing (unsigned long retrydelta,
 			unsigned long maxretries, unsigned long timeout) = 0;
 
 		/*.....................................................................
 		Debugging
 		.....................................................................*/
-		virtual void Configure_Debug(int index, int type_offset, int type_size, 
+		virtual void Configure_Debug(int index, int type_offset, int type_size,
 			char **names, int maxnames) = 0;
 		virtual void Mono_Debug_Print(int index, int refresh) = 0;
 	/*

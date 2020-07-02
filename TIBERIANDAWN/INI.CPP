@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\ini.cpv   2.18   16 Oct 1995 16:48:50   JOE_BOSTIC  $ */
@@ -281,10 +281,10 @@ bool Read_Scenario_Ini(char *root, bool fresh)
 		GlyphX_Debug_Print(fname);
 		return(false);
 	} else {
-		
+
 		GlyphX_Debug_Print("Opened scenario file");
 		GlyphX_Debug_Print(fname);
-		
+
 		file.Read(buffer, _ShapeBufferSize-1);
 	}
 
@@ -578,7 +578,7 @@ bool Read_Scenario_Ini(char *root, bool fresh)
 			*/
 #ifndef USE_RA_AI
 			MPlayerBlitz = IRandom (0,1);					// 1 = computer will blitz
-			
+
 			if (MPlayerBlitz) {
 				if (MPlayerBases) {
 					rndmax = 14000;
@@ -620,7 +620,7 @@ bool Read_Scenario_Ini(char *root, bool fresh)
 		*/
 		if (MPlayerGoodies) {
 			for (int index = 0; index < MPlayerCount; index++) {
-			//for (int index = 0; index < 200; index++) {  // Lots of crates for test		
+			//for (int index = 0; index < 200; index++) {  // Lots of crates for test
 				Map.Place_Random_Crate();
 			}
 		}
@@ -992,7 +992,7 @@ bool Read_Scenario_Ini_File(char *scenario_file_name, char* bin_file_name, const
 		*/
 		if (MPlayerGoodies) {
 			for (int index = 0; index < MPlayerCount; index++) {
-				//for (int index = 0; index < 200; index++) {  // Lots of crates for test		
+				//for (int index = 0; index < 200; index++) {  // Lots of crates for test
 				Map.Place_Random_Crate();
 			}
 		}
@@ -1744,7 +1744,7 @@ static void Create_Units(void)
 				//scaleval = 3 / (MPlayerMax - MPlayerCount);
 				//scaleval = max(ai_player_count, 1);
 				scaleval = 1;		//Set to 1 since EA QA can't beat skirmish with scaleval set higher.
-				
+
 				//if (scaleval==0) {
 				//	scaleval = 1;
 				//}
@@ -1830,7 +1830,7 @@ static void Create_Units(void)
 						if (!Scan_Place_Object(obj, centerpt)) {
 							delete obj;
 						} else {
-							
+
 							/*
 							** Don't use MISSION_TIMED_HUNT since it can trigger blitz behavior. ST - 2/28/2020 10:51AM
 							*/

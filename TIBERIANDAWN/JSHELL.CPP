@@ -1,21 +1,21 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\jshell.cpv   2.18   16 Oct 1995 16:51:12   JOE_BOSTIC  $ */
 /***********************************************************************************************
- ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               *** 
+ ***             C O N F I D E N T I A L  ---  W E S T W O O D   S T U D I O S               ***
  ***********************************************************************************************
  *                                                                                             *
  *                 Project Name : Command & Conquer                                            *
@@ -36,8 +36,8 @@
  *   Load_Alloc_Data -- Allocates a buffer and loads the file into it.                         *
  *   Load_Uncompress -- Loads and uncompresses data to a buffer.                               *
  *   Fatal -- General purpose fatal error handler.                                             *
- *   Set_Window -- Sets the window dimensions to that specified.                               * 
- *   Small_Icon -- Create a small icon from a big one.                                         * 
+ *   Set_Window -- Sets the window dimensions to that specified.                               *
+ *   Small_Icon -- Create a small icon from a big one.                                         *
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 #include	"function.h"
@@ -45,23 +45,23 @@
 
 #include <assert.h>
 
-/*********************************************************************************************** 
- * Small_Icon -- Create a small icon from a big one.                                           * 
- *                                                                                             * 
- *    This routine will extract the specified icon from the icon data file and convert that    * 
- *    incon into a small (3x3) representation. Typicall use of this mini-icon is for the radar * 
- *    map.                                                                                     * 
- *                                                                                             * 
- * INPUT:   iconptr  -- Pointer to the icon data file.                                         * 
- *                                                                                             * 
- *          iconnum  -- The embedded icon number to convert into a small image.                * 
- *                                                                                             * 
- * OUTPUT:  Returns with a pointer to the small icon imagery. This is exactly 9 bytes long.    * 
- *                                                                                             * 
- * WARNINGS:   none                                                                            * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
- *   05/11/1995 JLB : Created.                                                                 * 
+/***********************************************************************************************
+ * Small_Icon -- Create a small icon from a big one.                                           *
+ *                                                                                             *
+ *    This routine will extract the specified icon from the icon data file and convert that    *
+ *    incon into a small (3x3) representation. Typicall use of this mini-icon is for the radar *
+ *    map.                                                                                     *
+ *                                                                                             *
+ * INPUT:   iconptr  -- Pointer to the icon data file.                                         *
+ *                                                                                             *
+ *          iconnum  -- The embedded icon number to convert into a small image.                *
+ *                                                                                             *
+ * OUTPUT:  Returns with a pointer to the small icon imagery. This is exactly 9 bytes long.    *
+ *                                                                                             *
+ * WARNINGS:   none                                                                            *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   05/11/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
 void * Small_Icon(void const * iconptr, int iconnum)
 {
@@ -90,38 +90,38 @@ void * Small_Icon(void const * iconptr, int iconnum)
 	}
 
 	return(_icon);
-}	
+}
 
 
-/*********************************************************************************************** 
- * Set_Window -- Sets the window dimensions to that specified.                                 * 
- *                                                                                             * 
- *    Use this routine to set the windows dimensions to the coordinates and dimensions         * 
- *    specified.                                                                               * 
- *                                                                                             * 
- * INPUT:   x     -- Window X pixel position.                                                  * 
- *                                                                                             * 
- *          y     -- Window Y pixel position.                                                  * 
- *                                                                                             * 
- *          w     -- Window width in pixels.                                                   * 
- *                                                                                             * 
- *          h     -- Window height in pixels.                                                  * 
- *                                                                                             * 
- * OUTPUT:  none                                                                               * 
- *                                                                                             * 
- * WARNINGS:   The X and width values are truncated to an even 8 pixel boundary. This is       * 
- *             the same as stripping off the lower 3 bits.                                     * 
- *                                                                                             * 
- * HISTORY:                                                                                    * 
- *   01/15/1995 JLB : Created.                                                                 * 
+/***********************************************************************************************
+ * Set_Window -- Sets the window dimensions to that specified.                                 *
+ *                                                                                             *
+ *    Use this routine to set the windows dimensions to the coordinates and dimensions         *
+ *    specified.                                                                               *
+ *                                                                                             *
+ * INPUT:   x     -- Window X pixel position.                                                  *
+ *                                                                                             *
+ *          y     -- Window Y pixel position.                                                  *
+ *                                                                                             *
+ *          w     -- Window width in pixels.                                                   *
+ *                                                                                             *
+ *          h     -- Window height in pixels.                                                  *
+ *                                                                                             *
+ * OUTPUT:  none                                                                               *
+ *                                                                                             *
+ * WARNINGS:   The X and width values are truncated to an even 8 pixel boundary. This is       *
+ *             the same as stripping off the lower 3 bits.                                     *
+ *                                                                                             *
+ * HISTORY:                                                                                    *
+ *   01/15/1995 JLB : Created.                                                                 *
  *=============================================================================================*/
 void Set_Window(int window, int x, int y, int w, int h)
 {
-	WindowList[window][WINDOWWIDTH] = w >> 3; 
+	WindowList[window][WINDOWWIDTH] = w >> 3;
 	WindowList[window][WINDOWHEIGHT] = h;
 	WindowList[window][WINDOWX] = x >> 3;
 	WindowList[window][WINDOWY] = y;
-}	
+}
 
 
 /***********************************************************************************************
@@ -156,7 +156,7 @@ void Fatal(char const *message, ...)
 		exit(EXIT_FAILURE);
 	} else {
 		*((int*)0) = 0;
-	}	
+	}
 }
 
 
@@ -205,7 +205,7 @@ long Load_Uncompress(FileClass &file, BuffType &uncomp_buff, BuffType &dest_buff
 	CompHeaderType	header;
 
 	/*
-	**	The file must be opened in order to be read from. If the file 
+	**	The file must be opened in order to be read from. If the file
 	**	isn't opened, then open it. Record this fact so that it can be
 	**	restored to its closed state at the end.
 	*/

@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\conquer.cpv   2.18   16 Oct 1995 16:50:24   JOE_BOSTIC  $ */
@@ -152,7 +152,7 @@ void Main_Game(int argc, char *argv[])
 	**		until they indicate that the user wants to exit the scenario.
 	*/
 	while (Select_Game(fade)) {
-		
+
 		if (RunningAsDLL) {
 			return;
 		}
@@ -863,8 +863,8 @@ static void Message_Input(KeyNumType &input)
 	*/
 	if (rc==3) {
 //
-// PG_TO_FIX		  
-#if (0)		
+// PG_TO_FIX
+#if (0)
 		/*.....................................................................
 		Store this message in our LastMessage buffer; the computer may send
 		us a version of it later.
@@ -1233,7 +1233,7 @@ void Call_Back(void)
 	if (GameToPlay == GAME_NULL_MODEM
 	|| ((GameToPlay == GAME_MODEM) && ModemService)){
 	//|| GameToPlay == GAME_INTERNET) {
-		
+
 		// PG_TO_FIX
 		//NullModem.Service();
 	}
@@ -2323,7 +2323,7 @@ extern bool	VQPaletteChange;
 extern void Suspend_Audio_Thread(void);
 extern void Resume_Audio_Thread(void);
 
-//Play 
+//Play
 extern void Play_Movie_GlyphX(const char * movie_name, ThemeType theme );
 
 void Play_Movie(char const * name, ThemeType theme, bool clrscrn)
@@ -2740,7 +2740,7 @@ void CC_Draw_Shape(ObjectClass *object, void const * shapefile, int shapenum, in
 	}
 
 	CC_Draw_Shape(shapefile, shapenum, x, y, window, flags, fadingdata, ghostdata);
-}			  
+}
 
 
 void CC_Draw_Shape(ObjectClass *object, const char *shape_file_name, void const * shapefile, int shapenum, int x, int y, WindowNumberType window, ShapeFlags_Type flags, void const * fadingdata, void const * ghostdata, char override_owner)
@@ -2753,7 +2753,7 @@ void CC_Draw_Shape(ObjectClass *object, const char *shape_file_name, void const 
 	}
 
 	CC_Draw_Shape(shapefile, shapenum, x, y, window, flags, fadingdata, ghostdata);
-}			  
+}
 
 
 void CC_Draw_Pip(ObjectClass *object, void const * shapefile, int shapenum, int x, int y, WindowNumberType window, ShapeFlags_Type flags, void const * fadingdata, void const * ghostdata)
@@ -3372,7 +3372,7 @@ void Heap_Dump_Check( char *string )
 void Dump_Heap_Pointers( void )
 {
 // ST - 1/2/2019 4:04PM
-#if (0)	
+#if (0)
 	char *ptr, *lptr, *nptr, *cptr, *dptr, *wlptr, *nlptr, *aptr, *clptr;
 	int numallocs, numfrees, sizefree;
 	static char _freeorused[2][5] = { "FREE", "USED" };
@@ -3716,9 +3716,9 @@ int Get_CD_Index (int cd_drive, int timeout)
 #pragma warning (disable : 4101)
 bool Force_CD_Available(int cd)
 {
-	
+
 #if (1)	//ST - 1/2/2019 5:44PM
-	
+
 	static int _last = -1;
 
 	if (_last != cd) {
@@ -3780,7 +3780,7 @@ bool Force_CD_Available(int cd)
 
 
 #else
-	
+
 #ifndef DEMO
 	static int _last = -1;
 	int open_failed;

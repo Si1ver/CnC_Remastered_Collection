@@ -1,16 +1,16 @@
 ﻿//
 // Copyright 2020 Electronic Arts Inc.
 //
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
-// software: you can redistribute it and/or modify it under the terms of 
-// the GNU General Public License as published by the Free Software Foundation, 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is free
+// software: you can redistribute it and/or modify it under the terms of
+// the GNU General Public License as published by the Free Software Foundation,
 // either version 3 of the License, or (at your option) any later version.
 
-// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed 
-// in the hope that it will be useful, but with permitted additional restrictions 
-// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT 
-// distributed with this program. You should have received a copy of the 
-// GNU General Public License along with permitted additional restrictions 
+// TiberianDawn.DLL and RedAlert.dll and corresponding source code is distributed
+// in the hope that it will be useful, but with permitted additional restrictions
+// under Section 7 of the GPL. See the GNU General Public License in LICENSE.TXT
+// distributed with this program. You should have received a copy of the
+// GNU General Public License along with permitted additional restrictions
 // with this program. If not, see https://github.com/electronicarts/CnC_Remastered_Collection
 
 /* $Header:   F:\projects\c&c\vcs\code\ipxconn.h_v   1.12   16 Oct 1995 16:45:10   JOE_BOSTIC  $ */
@@ -77,7 +77,7 @@ class IPXConnClass : public NonSequencedConnClass
 		/*.....................................................................
 		Constructor/destructor.
 		.....................................................................*/
-		IPXConnClass(int numsend, int numrecieve, int maxlen, 
+		IPXConnClass(int numsend, int numrecieve, int maxlen,
 			unsigned short magicnum, IPXAddressClass *address, int id, char *name);
 		virtual ~IPXConnClass () {};
 
@@ -87,19 +87,19 @@ class IPXConnClass : public NonSequencedConnClass
 		virtual void Init (void);
 
 		/*.....................................................................
-		The Configure function is for configuring all connections at once.  
+		The Configure function is for configuring all connections at once.
 		It's static because it doesn't apply to any specific connection, but
 		all of them.
 		.....................................................................*/
-		static void Configure(unsigned short socket, 
-			int conn_num, ECBType *listen_ecb, ECBType *send_ecb, 
-			IPXHeaderType *listen_header, IPXHeaderType *send_header, 
+		static void Configure(unsigned short socket,
+			int conn_num, ECBType *listen_ecb, ECBType *send_ecb,
+			IPXHeaderType *listen_header, IPXHeaderType *send_header,
 			char *listen_buf, char *send_buf, long handler_rm_ptr,
 			int maxpacketlen);
 
 		/*.....................................................................
 		These routines tell IPX to start listening for packets, and to stop
-		listening for packets.  They're static because they affect all 
+		listening for packets.  They're static because they affect all
 		connections at once (there's no way to turn listening on for only one
 		connection; it's all or nothing).
 		.....................................................................*/
