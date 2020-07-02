@@ -1,4 +1,4 @@
-//
+ï»¿//
 // Copyright 2020 Electronic Arts Inc.
 //
 // TiberianDawn.DLL and RedAlert.dll and corresponding source code is free 
@@ -2145,8 +2145,8 @@ bool WolapiObject::SpawnBrowser( const char* szURL )
 								NULL,			//	Thread handle not inheritable.
 								FALSE,			//	Set handle inheritance to FALSE.
 								0,				//	No creation flags.
-								NULL,			//	Use parent’s environment block.
-								NULL,			//	Use parent’s starting directory.
+								NULL,			//	Use parent's environment block.
+								NULL,			//	Use parent's starting directory.
 								&si,			//	Pointer to STARTUPINFO structure.
 								&pi ) )			//	Pointer to PROCESS_INFORMATION structure.
 		{
